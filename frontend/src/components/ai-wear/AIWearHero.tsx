@@ -1,15 +1,11 @@
 import Link from 'next/link';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight, Play, Cpu, Eye, Shield } from 'lucide-react';
+import Image from 'next/image';
 
 export default function AIWearHero() {
   return (
-    <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-slate-900 min-h-[90vh] flex items-center">
-      {/* Background glow effects */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[-20%] right-[-10%] w-[50%] h-[50%] bg-[#0ea5e9]/20 rounded-full blur-[120px]"></div>
-        <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-500/10 rounded-full blur-[100px]"></div>
-      </div>
-
+    <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden min-h-[90vh] flex items-center bg-transparent">
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center">
           
@@ -39,41 +35,35 @@ export default function AIWearHero() {
               </Link>
               <Link 
                 href="#demo" 
-                className="flex items-center gap-2 bg-transparent hover:bg-slate-800 text-white px-8 py-3.5 rounded-xl font-bold transition-all border border-slate-600 text-lg hover:-translate-y-0.5"
+                className="flex items-center gap-2 bg-transparent hover:bg-slate-800/50 text-white px-8 py-3.5 rounded-xl font-bold transition-all border border-slate-700 text-lg hover:-translate-y-0.5"
               >
                 <Play className="w-5 h-5" /> Watch Demo
               </Link>
             </div>
           </div>
 
-          {/* Right Content - Abstract Wireframe Globe & Telemetry */}
+          {/* Right Content - 3D Render & Telemetry (Figma Match) */}
           <div className="relative flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[500px] aspect-square rounded-full border border-slate-700/50 flex items-center justify-center bg-slate-800/20 backdrop-blur-3xl shadow-2xl overflow-hidden">
-              {/* CSS approximation of the wireframe globe */}
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-700/40 via-transparent to-transparent"></div>
+            
+            {/* Main Rounded Image Container */}
+            <div className="relative w-full max-w-[600px] aspect-square lg:aspect-[4/3] rounded-[2rem] border border-slate-700/50 flex items-end justify-center bg-slate-800/20 backdrop-blur-sm shadow-2xl overflow-hidden p-6 group">
               
-              {/* Grid lines */}
-              <div className="absolute inset-0" style={{
-                backgroundImage: 'linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)',
-                backgroundSize: '40px 40px'
-              }}></div>
-              
-              <div className="w-[70%] h-[70%] rounded-full border border-[#0ea5e9]/30 relative animate-[spin_60s_linear_infinite]">
-                <div className="absolute inset-0 rounded-full border border-[#0ea5e9]/20 rotate-45 scale-[1.1]"></div>
-                <div className="absolute inset-0 rounded-full border border-[#0ea5e9]/20 -rotate-45 scale-[1.1]"></div>
-                <div className="absolute top-1/2 left-0 w-full h-[1px] bg-[#0ea5e9]/30"></div>
-                <div className="absolute top-0 left-1/2 w-[1px] h-full bg-[#0ea5e9]/30"></div>
+              {/* The 3D abstract hardware render */}
+              <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105">
+                <img 
+                  src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1600&auto=format&fit=crop" 
+                  alt="AI Wear Concept" 
+                  className="w-full h-full object-cover opacity-80"
+                />
+                {/* Overlay gradient to match dark theme */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#020817] via-transparent to-transparent opacity-90"></div>
+                <div className="absolute inset-0 bg-brand-navy/30 mix-blend-multiply"></div>
               </div>
 
-              {/* Data Orbs */}
-              <div className="absolute top-[30%] left-[20%] w-3 h-3 bg-[#0ea5e9] rounded-full shadow-[0_0_15px_#0ea5e9] animate-pulse"></div>
-              <div className="absolute bottom-[40%] right-[30%] w-2 h-2 bg-emerald-400 rounded-full shadow-[0_0_10px_#34d399] animate-pulse delay-75"></div>
-              <div className="absolute top-[60%] left-[70%] w-4 h-4 bg-indigo-400 rounded-full shadow-[0_0_20px_#818cf8] animate-pulse delay-150"></div>
-
-              {/* Telemetry Badge overlay */}
-              <div className="absolute bottom-6 left-6 right-6 bg-slate-900/90 border border-slate-700/80 rounded-xl p-4 backdrop-blur-md shadow-xl text-xs font-mono">
+              {/* Telemetry Badge overlay inside the image */}
+              <div className="relative z-20 w-full bg-[#020817]/80 border border-slate-700/80 rounded-xl p-4 backdrop-blur-md shadow-xl text-xs font-mono">
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_#10b981]"></span>
                   <span className="text-white font-bold">AI-Wear Active</span>
                   <span className="text-slate-500">— Processing visual field</span>
                 </div>
@@ -84,7 +74,9 @@ export default function AIWearHero() {
                   <span>Hazards: <span className="text-emerald-500">0</span></span>
                 </div>
               </div>
+              
             </div>
+            
           </div>
           
         </div>

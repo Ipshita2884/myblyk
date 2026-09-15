@@ -1,3 +1,6 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import { Camera, Cpu, Eye, Brain, Zap, Mic } from 'lucide-react';
 
 export default function HowItWorksSection() {
@@ -59,43 +62,85 @@ export default function HowItWorksSection() {
           
           {/* Left Content */}
           <div className="max-w-xl">
-            <div className="inline-flex px-4 py-1.5 rounded-full bg-sky-50 text-[#0ea5e9] font-bold text-xs uppercase tracking-widest mb-6 border border-sky-100">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex px-4 py-1.5 rounded-full bg-sky-50 text-[#0ea5e9] font-bold text-xs uppercase tracking-widest mb-6 border border-sky-100 shadow-sm"
+            >
               HOW IT WORKS
-            </div>
+            </motion.div>
             
-            <h2 className="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight"
+            >
               The AI-Wear <span className="text-[#0ea5e9]">Processing Pipeline</span>
-            </h2>
+            </motion.h2>
             
-            <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-lg text-slate-600 mb-6 leading-relaxed"
+            >
               Every moment, AI-Wear executes a sophisticated multi-stage pipeline — from raw optical input to precise voice guidance — entirely on-device. No cloud. No latency. No privacy compromise.
-            </p>
+            </motion.p>
             
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="text-lg text-slate-600 leading-relaxed"
+            >
               The pipeline activates in under 50 milliseconds, delivering real-time awareness that feels natural and anticipatory rather than reactive.
-            </p>
+            </motion.p>
           </div>
 
           {/* Right Content - Water Drop UI Timeline */}
           <div className="relative flex justify-center lg:justify-end">
             <div className="relative max-w-md w-full">
-              {/* Connecting Line */}
-              <div className="absolute top-8 bottom-8 left-6 w-[2px] bg-gradient-to-b from-[#0ea5e9] via-[#818cf8] to-transparent rounded-full shadow-[0_0_10px_rgba(14,165,233,0.5)]"></div>
+              
+              {/* Connecting Line Track */}
+              <div className="absolute top-8 bottom-8 left-[1.4rem] w-[2px] bg-slate-200 rounded-full overflow-hidden">
+                {/* Flowing Water Droplet Animation */}
+                <motion.div
+                  animate={{
+                    y: ["-20%", "400%"]
+                  }}
+                  transition={{
+                    duration: 3,
+                    ease: "linear",
+                    repeat: Infinity,
+                  }}
+                  className="w-full h-32 bg-gradient-to-b from-transparent via-[#0ea5e9] to-[#38bdf8] shadow-[0_0_15px_#0ea5e9] opacity-80"
+                />
+              </div>
               
               {/* Steps */}
               <div className="flex flex-col gap-8 relative z-10">
                 {steps.map((step, index) => (
-                  <div key={index} className="flex items-start gap-6 group">
-                    <div className={`w-12 h-12 rounded-xl shrink-0 flex items-center justify-center border ${step.bgColor} ${step.borderColor} ${step.color} shadow-sm group-hover:scale-110 transition-transform bg-white relative`}>
-                      {/* Inner dot connecting to the line */}
-                      <div className={`absolute -left-2 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white border-4 ${step.borderColor} shadow-sm hidden`}></div>
+                  <motion.div 
+                    key={index} 
+                    initial={{ opacity: 0, x: 40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.7, delay: index * 0.2, ease: "easeOut" }}
+                    className="flex items-start gap-6 group cursor-default"
+                  >
+                    <div className={`w-12 h-12 rounded-xl shrink-0 flex items-center justify-center border ${step.bgColor} ${step.borderColor} ${step.color} shadow-sm group-hover:scale-110 group-hover:bg-white group-hover:border-[#0ea5e9]/50 group-hover:shadow-[0_0_20px_-5px_rgba(14,165,233,0.4)] transition-all duration-300 bg-white relative`}>
                       {step.icon}
                     </div>
-                    <div className="pt-1">
-                      <h3 className="text-lg font-bold text-slate-900 mb-1">{step.title}</h3>
+                    <div className="pt-1 transition-transform duration-300 group-hover:translate-x-2">
+                      <h3 className="text-lg font-bold text-slate-900 mb-1 group-hover:text-[#0ea5e9] transition-colors">{step.title}</h3>
                       <p className="text-slate-500 text-sm leading-relaxed">{step.description}</p>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>

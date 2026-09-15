@@ -39,7 +39,7 @@ export default function FAQSection() {
         
         {/* Header */}
         <div className="text-center mb-16 flex flex-col items-center">
-          <div className="inline-flex px-4 py-1.5 rounded-full bg-sky-50 text-[#0ea5e9] font-bold text-xs uppercase tracking-widest mb-6 border border-sky-100">
+          <div className="inline-flex px-4 py-1.5 rounded-full bg-sky-50 text-[#0ea5e9] font-bold text-xs uppercase tracking-widest mb-6 border border-sky-100 shadow-sm">
             FAQ
           </div>
           
@@ -55,18 +55,18 @@ export default function FAQSection() {
             return (
               <div 
                 key={index} 
-                className={`border rounded-2xl transition-all duration-200 overflow-hidden ${
-                  isOpen ? 'border-[#0ea5e9] bg-sky-50/30 shadow-md shadow-sky-100/50' : 'border-slate-200 bg-white hover:border-slate-300'
+                className={`border rounded-2xl transition-all duration-300 overflow-hidden group ${
+                  isOpen ? 'border-[#0ea5e9]/70 bg-sky-50/30 shadow-[0_0_20px_rgba(14,165,233,0.15)]' : 'border-slate-200 bg-white hover:border-[#0ea5e9]/50 hover:shadow-[0_0_15px_-5px_rgba(14,165,233,0.2)]'
                 }`}
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
                 >
-                  <span className={`font-semibold text-base ${isOpen ? 'text-[#0ea5e9]' : 'text-slate-800'}`}>
+                  <span className={`font-semibold text-base transition-colors duration-300 ${isOpen ? 'text-[#0ea5e9]' : 'text-slate-800 group-hover:text-[#0ea5e9]'}`}>
                     {faq.question}
                   </span>
-                  <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isOpen ? 'rotate-180 text-[#0ea5e9]' : 'text-slate-400'}`} />
+                  <ChevronDown className={`w-5 h-5 transition-all duration-300 ${isOpen ? 'rotate-180 text-[#0ea5e9] drop-shadow-[0_0_5px_rgba(14,165,233,0.3)]' : 'text-slate-400 group-hover:text-[#0ea5e9]'}`} />
                 </button>
                 
                 <div 
