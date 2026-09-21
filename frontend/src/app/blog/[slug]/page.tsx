@@ -7,6 +7,12 @@ export const metadata = {
   description: "Cloud-based AI has powered the first generation of assistive devices. But the next generation must run entirely on-device.",
 };
 
+export function generateStaticParams() {
+  return [
+    { slug: 'edge-ai-future' }
+  ];
+}
+
 export default function BlogPostPage() {
   return (
     <main className="min-h-screen bg-[#0f172a] flex flex-col font-[family-name:var(--font-geist-sans)]">
