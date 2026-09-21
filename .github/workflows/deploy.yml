@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy Admin to GitHub Pages
 
 on:
   push:
@@ -50,6 +50,6 @@ jobs:
         with:
           path: ./admin/dist
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
