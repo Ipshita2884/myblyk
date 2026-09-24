@@ -34,26 +34,19 @@ export default function CTASection() {
   return (
     <section className="relative py-32 md:py-40 overflow-hidden bg-slate-900 flex items-center justify-center min-h-[80vh] perspective-[2000px]">
       
-      {/* Vibrant Animated Background Orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div 
-          animate={{ 
-            rotate: [0, 360],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="absolute top-[-20%] left-[-10%] w-[70vw] h-[70vw] bg-gradient-to-r from-violet-600 via-fuchsia-500 to-orange-500 rounded-full blur-[120px] opacity-50 mix-blend-screen"
+      {/* Top transition fade from previous section */}
+      <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-white via-white/80 to-transparent z-20 pointer-events-none" />
+
+      {/* Cool Image Background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <div className="absolute inset-0 bg-slate-900/40 mix-blend-multiply z-10" />
+        <img 
+          src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop" 
+          alt="Abstract 3D Background" 
+          className="w-full h-full object-cover scale-105"
         />
-        <motion.div 
-          animate={{ 
-            rotate: [360, 0],
-            scale: [1, 1.3, 1],
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-[-20%] right-[-10%] w-[60vw] h-[60vw] bg-gradient-to-l from-cyan-400 via-blue-500 to-indigo-600 rounded-full blur-[120px] opacity-60 mix-blend-screen"
-        />
-        {/* Subtle grid pattern overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff1a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff1a_1px,transparent_1px)] bg-[size:40px_40px] opacity-20 mix-blend-overlay"></div>
+        {/* Subtle grid pattern overlay over image */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff15_1px,transparent_1px),linear-gradient(to_bottom,#ffffff15_1px,transparent_1px)] bg-[size:40px_40px] z-20 mix-blend-overlay"></div>
       </div>
 
       <div className="max-w-5xl mx-auto px-6 relative z-10 w-full" style={{ perspective: 1500 }}>
@@ -65,7 +58,7 @@ export default function CTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative bg-white/10 backdrop-blur-2xl border border-white/20 rounded-[3rem] p-12 md:p-24 text-center shadow-[0_8px_32px_0_rgba(31,38,135,0.4)] flex flex-col items-center"
+          className="relative bg-white/20 backdrop-blur-3xl border border-white/40 rounded-[3rem] p-12 md:p-24 text-center shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] flex flex-col items-center"
         >
           {/* Glass reflection highlight */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent rounded-[3rem] pointer-events-none" />
