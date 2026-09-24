@@ -6,7 +6,6 @@ import SolutionSection from "@/components/home/SolutionSection";
 import TechnologySection from "@/components/home/TechnologySection";
 import AboutSection from "@/components/home/AboutSection";
 import RoadmapSection from "@/components/home/RoadmapSection";
-import CTASection from "@/components/home/CTASection";
 import Footer from "@/components/layout/Footer";
 
 export default function Home() {
@@ -21,7 +20,6 @@ export default function Home() {
         <TechnologySection />
         <AboutSection />
         <RoadmapSection />
-        <CTASection />
       </main>
       
       <Footer />
