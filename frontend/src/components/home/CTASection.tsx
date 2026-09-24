@@ -49,7 +49,7 @@ export default function CTASection() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff15_1px,transparent_1px),linear-gradient(to_bottom,#ffffff15_1px,transparent_1px)] bg-[size:40px_40px] z-20 mix-blend-overlay"></div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 relative z-10 w-full" style={{ perspective: 1500 }}>
+      <div className="max-w-5xl mx-auto px-6 relative z-10 w-full mt-16 md:mt-24" style={{ perspective: 1500 }}>
         <motion.div
           style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
           onMouseMove={handleMouseMove}
