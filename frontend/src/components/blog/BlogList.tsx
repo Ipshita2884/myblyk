@@ -60,7 +60,7 @@ export default function BlogList() {
 
   return (
     <section className="bg-slate-50/50 py-20 border-t border-gray-100">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Categories */}
         <div className="flex flex-wrap items-center gap-3 mb-12">
