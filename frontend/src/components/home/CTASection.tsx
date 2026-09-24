@@ -37,6 +37,9 @@ export default function CTASection() {
       {/* Top transition fade from previous section */}
       <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-white via-white/80 to-transparent z-20 pointer-events-none" />
 
+      {/* Bottom transition fade into footer */}
+      <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-[#4b5563] via-[#4b5563]/80 to-transparent z-20 pointer-events-none" />
+
       {/* Cool Image Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <div className="absolute inset-0 bg-slate-900/40 mix-blend-multiply z-10" />
