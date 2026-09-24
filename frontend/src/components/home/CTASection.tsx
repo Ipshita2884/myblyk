@@ -32,13 +32,13 @@ export default function CTASection() {
   };
 
   return (
-    <section className="relative py-32 md:py-40 overflow-hidden bg-slate-900 flex items-center justify-center min-h-[80vh] perspective-[2000px]">
+    <section className="relative py-48 md:py-56 overflow-hidden bg-slate-900 flex items-center justify-center min-h-[95vh] perspective-[2000px]">
       
       {/* Cool Image Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <div className="absolute inset-0 bg-slate-900/40 mix-blend-multiply z-10" />
         <img 
-          src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop" 
+          src="/imgbg.png" 
           alt="Abstract 3D Background" 
           className="w-full h-full object-cover scale-105"
         />
@@ -46,11 +46,11 @@ export default function CTASection() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff15_1px,transparent_1px),linear-gradient(to_bottom,#ffffff15_1px,transparent_1px)] bg-[size:40px_40px] z-20 mix-blend-overlay"></div>
       </div>
 
-      {/* Top transition fade from previous section */}
-      <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-white via-white/80 to-transparent z-30 pointer-events-none" />
+      {/* Top transition fade from previous section - reduced height so it's not too close to the card */}
+      <div className="absolute top-0 left-0 w-full h-24 md:h-32 bg-gradient-to-b from-white via-white/80 to-transparent z-30 pointer-events-none" />
 
-      {/* Bottom transition fade into footer */}
-      <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-[#565F70] via-[#565F70]/90 to-transparent z-30 pointer-events-none" />
+      {/* Bottom transition fade into footer - reduced height */}
+      <div className="absolute bottom-0 left-0 w-full h-32 md:h-40 bg-gradient-to-t from-[#565F70] via-[#565F70]/90 to-transparent z-30 pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-6 relative z-10 w-full" style={{ perspective: 1500 }}>
         <motion.div
