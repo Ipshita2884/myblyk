@@ -41,7 +41,7 @@ export default function BlogHero() {
       </div>
 
       {/* Featured Article */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full perspective-1000">
+      <div className="w-full max-w-[1500px] mx-auto px-6 lg:px-12 relative z-10 perspective-1000">
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
