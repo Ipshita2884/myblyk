@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <section className="relative pt-20 pb-32 overflow-hidden bg-background-light">
-      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
+      <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-20 mix-blend-overlay"></div>
       
       {/* Subtle Theme Gradients */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

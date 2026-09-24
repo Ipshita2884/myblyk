@@ -56,22 +56,24 @@ export default function GeneralApplication() {
               />
             </div>
 
-            <div className="space-y-2">
-              <label className="block text-xs font-semibold text-slate-700">LinkedIn Profile</label>
-              <input 
-                type="url" 
-                placeholder="https://linkedin.com/in/yourprofile"
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0ea5e9]/20 focus:border-[#0ea5e9] transition-all text-sm"
-              />
-            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label className="block text-xs font-semibold text-slate-700">Phone Number</label>
+                <input 
+                  type="tel" 
+                  placeholder="+91 98765 43210"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0ea5e9]/20 focus:border-[#0ea5e9] transition-all text-sm"
+                />
+              </div>
 
-            <div className="space-y-2">
-              <label className="block text-xs font-semibold text-slate-700">Portfolio / GitHub</label>
-              <input 
-                type="url" 
-                placeholder="https://github.com/yourhandle"
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0ea5e9]/20 focus:border-[#0ea5e9] transition-all text-sm"
-              />
+              <div className="space-y-2">
+                <label className="block text-xs font-semibold text-slate-700">City / State</label>
+                <input 
+                  type="text" 
+                  placeholder="Bangalore, Karnataka"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0ea5e9]/20 focus:border-[#0ea5e9] transition-all text-sm"
+                />
+              </div>
             </div>
 
             <div className="space-y-2">
