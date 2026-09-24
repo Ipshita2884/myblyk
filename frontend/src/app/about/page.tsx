@@ -5,6 +5,7 @@ import OurStorySection from "@/components/about/OurStorySection";
 import MissionVisionSection from "@/components/about/MissionVisionSection";
 import OurTeamSection from "@/components/about/OurTeamSection";
 import OurValuesSection from "@/components/about/OurValuesSection";
+import RecognitionAwardsSection from "@/components/about/RecognitionAwardsSection";
 import AboutCTASection from "@/components/about/AboutCTASection";
 
 export const metadata = {
@@ -34,6 +35,7 @@ export default function AboutPage() {
         <MissionVisionSection />
         <OurTeamSection />
         <OurValuesSection />
+        <RecognitionAwardsSection />
         <AboutCTASection />
       </div>
       </div>
