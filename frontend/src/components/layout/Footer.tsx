@@ -1,12 +1,12 @@
 import Link from 'next/link';
-import CTASection from '../home/CTASection';
 
 export default function Footer() {
   return (
-    <>
-      <CTASection />
-      <footer className="bg-[#565F70] text-slate-300 pt-20 pb-8 relative z-30">
-        <div className="max-w-7xl mx-auto px-6">
+    <footer className="bg-[#565F70] text-slate-300 pt-20 pb-8 relative z-30 mt-16">
+      {/* Blurry fade effect extending upwards to blend the footer with any section above it */}
+      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-t from-[#565F70] via-[#565F70]/80 to-transparent -translate-y-full pointer-events-none" />
+      
+      <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
           <div className="lg:col-span-2 pr-8">
             <div className="flex items-center gap-3 mb-6">
@@ -92,6 +92,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-    </>
   );
 }
