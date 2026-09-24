@@ -55,9 +55,12 @@ export default function BlogList() {
     activeCategory === "All" || post.category === activeCategory
   );
 
+  const topCards = filteredPosts.slice(0, 3);
+  const listPosts = filteredPosts.slice(3);
+
   return (
     <section className="bg-slate-50/50 py-20 border-t border-gray-100">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8">
         
         {/* Categories */}
         <div className="flex flex-wrap items-center gap-3 mb-12">
@@ -76,10 +79,10 @@ export default function BlogList() {
           ))}
         </div>
 
-        {/* Blog Grid */}
+        {/* Blog Grid (First 3 posts) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence mode="popLayout">
-            {filteredPosts.map((post, index) => (
+            {topCards.map((post, index) => (
               <motion.div
                 layout
                 initial={{ opacity: 0, y: 30 }}
@@ -130,6 +133,58 @@ export default function BlogList() {
             ))}
           </AnimatePresence>
         </div>
+
+        {/* Blog Listing (Remaining posts) */}
+        {listPosts.length > 0 && (
+          <div className="mt-16 flex flex-col gap-6">
+            <AnimatePresence mode="popLayout">
+              {listPosts.map((post, index) => (
+                <motion.div
+                  layout
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.5, delay: index * 0.1, type: "spring", bounce: 0.3 }}
+                  key={post.id}
+                  className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-[0_10px_30px_rgba(14,165,233,0.1)] transition-all duration-500 flex flex-col md:flex-row cursor-pointer group relative"
+                  onClick={() => window.location.href = '/blog/edge-ai-future'}
+                >
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#0ea5e9] to-[#38bdf8] scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-top z-20"></div>
+
+                  <div className="w-full md:w-72 h-56 md:h-auto overflow-hidden relative shrink-0">
+                    <img 
+                      src={post.image} 
+                      alt={post.title}
+                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                    />
+                  </div>
+                  
+                  <div className="p-6 md:p-8 flex flex-col justify-center flex-grow group-hover:bg-blue-50/5 transition-colors duration-500">
+                    <div className="inline-flex items-center gap-2 text-[#0ea5e9] text-xs font-bold tracking-wider uppercase mb-3 bg-[#f0f7ff] group-hover:bg-white group-hover:shadow-sm px-3 py-1 rounded-full w-fit transition-all duration-300">
+                      {post.category}
+                    </div>
+                    
+                    <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3 leading-snug group-hover:text-[#0ea5e9] transition-colors duration-300">
+                      {post.title}
+                    </h3>
+                    
+                    <p className="text-slate-600 text-sm mb-6 line-clamp-2">
+                      {post.excerpt}
+                    </p>
+                    
+                    <div className="flex items-center gap-4 text-xs font-medium text-gray-500 mt-auto">
+                      <span className="group-hover:text-[#0ea5e9] transition-colors duration-300 font-semibold">{post.author}</span>
+                      <span className="text-gray-300">•</span>
+                      <span>{post.readTime}</span>
+                      <span className="text-gray-300">•</span>
+                      <span>{post.date}</span>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
+        )}
 
       </div>
     </section>

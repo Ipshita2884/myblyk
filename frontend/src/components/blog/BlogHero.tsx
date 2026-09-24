@@ -52,15 +52,14 @@ export default function BlogHero() {
           {/* Subtle gradient overlay on hover */}
           <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-20"></div>
 
-          <div className="w-full md:w-1/2 h-64 md:h-auto relative overflow-hidden">
-            <div className="absolute inset-0 bg-slate-200" />
+          <div className="w-full md:w-1/2 h-64 md:h-auto relative overflow-hidden bg-slate-200">
             <img 
               src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
               alt="Circuit Board" 
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 group-hover:rotate-1"
             />
             {/* Image overlay gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10"></div>
           </div>
           
           <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center relative z-10 bg-white group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-blue-50/30 transition-colors duration-500">
