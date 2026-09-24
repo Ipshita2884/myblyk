@@ -79,7 +79,7 @@ export default function ProductSeriesSection() {
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {products.map((product, index) => (
-            <div key={index} className={`group flex flex-col bg-slate-900 backdrop-blur-md rounded-[2rem] overflow-hidden border transition-all duration-500 hover:-translate-y-2 ${product.mostPopular ? 'border-amber-500/50 shadow-[0_0_20px_-10px_rgba(245,158,11,0.4)] hover:shadow-[0_0_40px_-5px_rgba(245,158,11,0.5)] hover:border-amber-400/80 hover:-translate-y-6 relative transform md:-translate-y-4' : 'border-slate-700/50 hover:shadow-[0_0_40px_-10px_rgba(14,165,233,0.3)] hover:border-[#0ea5e9]/50 shadow-lg'}`}>
+            <div key={index} className={`group flex flex-col bg-slate-900 backdrop-blur-md rounded-[2rem] overflow-hidden border transition-all duration-500 hover:-translate-y-2 ${product.mostPopular ? 'border-amber-500/50 shadow-[0_0_20px_-10px_rgba(245,158,11,0.4)] hover:shadow-[0_0_40px_-5px_rgba(245,158,11,0.5)] hover:border-amber-400/80 relative' : 'border-slate-700/50 hover:shadow-[0_0_40px_-10px_rgba(14,165,233,0.3)] hover:border-[#0ea5e9]/50 shadow-lg'}`}>
               
               {product.mostPopular && (
                 <div className="bg-gradient-to-r from-amber-400 to-yellow-600 text-white text-xs font-bold uppercase tracking-wider py-2 text-center flex justify-center items-center gap-1 w-full absolute top-0 z-20 shadow-md">
@@ -88,7 +88,7 @@ export default function ProductSeriesSection() {
               )}
 
               {/* Image Graphic */}
-              <div className={`relative w-full h-56 overflow-hidden ${product.mostPopular ? 'mt-8' : ''}`}>
+              <div className="relative w-full h-56 overflow-hidden">
                 <div className="absolute inset-0 bg-brand-navy/40 mix-blend-multiply z-10 group-hover:bg-brand-navy/10 transition-colors duration-500"></div>
                 <img 
                   src={product.imageSrc} 
