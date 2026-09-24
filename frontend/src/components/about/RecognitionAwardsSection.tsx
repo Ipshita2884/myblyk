@@ -39,19 +39,7 @@ export default function RecognitionAwardsSection() {
   const [hoverIndex, setHoverIndex] = useState<number>(0);
 
   return (
-    <section className="bg-slate-900 py-24 relative overflow-hidden">
-      {/* Dynamic Background Blur based on hovered item */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={hoverIndex}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.2 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.8 }}
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat filter blur-[100px] scale-110"
-          style={{ backgroundImage: `url(${awards[hoverIndex].image})` }}
-        />
-      </AnimatePresence>
+    <section className="py-24 relative z-10">
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
@@ -61,9 +49,9 @@ export default function RecognitionAwardsSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 bg-white/10 text-sky-400 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-8 backdrop-blur-md border border-white/10"
+            className="inline-flex items-center gap-2 bg-[#f0f7ff] text-[#0ea5e9] px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-8 shadow-sm border border-blue-100"
           >
-            <div className="w-1.5 h-1.5 rounded-full bg-sky-400 shadow-[0_0_10px_rgba(56,189,248,0.8)]"></div>
+            <div className="w-1.5 h-1.5 rounded-full bg-[#0ea5e9]"></div>
             ACHIEVEMENTS
           </motion.div>
           
@@ -72,7 +60,7 @@ export default function RecognitionAwardsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight text-white tracking-tight"
+            className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight text-slate-900 tracking-tight"
           >
             Recognition & Awards
           </motion.h2>
@@ -82,7 +70,7 @@ export default function RecognitionAwardsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-slate-400 text-lg max-w-2xl mx-auto"
+            className="text-slate-600 text-lg max-w-2xl mx-auto"
           >
             We build for the people, not the praise. Yet, we are deeply honored when our engineering dedication is recognized.
           </motion.p>
