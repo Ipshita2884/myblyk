@@ -87,14 +87,25 @@ export default function ContactForm() {
           </motion.div>
         </div>
 
-        <motion.div variants={itemVariants} className="space-y-2 relative group">
-          <label className="text-[11px] font-bold text-slate-500 uppercase tracking-wider group-focus-within:text-[#0ea5e9] transition-colors">Email</label>
-          <input 
-            type="email" 
-            placeholder="ravi@organization.com"
-            className="w-full bg-slate-50/50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm text-slate-900 placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#0ea5e9] focus:ring-4 focus:ring-[#0ea5e9]/10 transition-all duration-300"
-          />
-        </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <motion.div variants={itemVariants} className="space-y-2 relative group">
+            <label className="text-[11px] font-bold text-slate-500 uppercase tracking-wider group-focus-within:text-[#0ea5e9] transition-colors">Email</label>
+            <input 
+              type="email" 
+              placeholder="ravi@organization.com"
+              className="w-full bg-slate-50/50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm text-slate-900 placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#0ea5e9] focus:ring-4 focus:ring-[#0ea5e9]/10 transition-all duration-300"
+            />
+          </motion.div>
+
+          <motion.div variants={itemVariants} className="space-y-2 relative group">
+            <label className="text-[11px] font-bold text-slate-500 uppercase tracking-wider group-focus-within:text-[#0ea5e9] transition-colors">Phone Number</label>
+            <input 
+              type="tel" 
+              placeholder="+91 98765 43210"
+              className="w-full bg-slate-50/50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm text-slate-900 placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#0ea5e9] focus:ring-4 focus:ring-[#0ea5e9]/10 transition-all duration-300"
+            />
+          </motion.div>
+        </div>
 
         <motion.div variants={itemVariants} className="space-y-2 relative group">
           <label className="text-[11px] font-bold text-slate-500 uppercase tracking-wider group-focus-within:text-[#0ea5e9] transition-colors">Subject</label>
