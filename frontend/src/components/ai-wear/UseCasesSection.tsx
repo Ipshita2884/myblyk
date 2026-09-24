@@ -72,14 +72,14 @@ export default function UseCasesSection() {
                   alt={useCase.title} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                
-                {/* Floating Icon Badge */}
-                <div className="absolute -bottom-5 left-6 w-10 h-10 bg-white rounded-xl shadow-md border border-slate-100 flex items-center justify-center z-20 group-hover:-translate-y-1 transition-transform group-hover:border-[#0ea5e9]/30 group-hover:shadow-[0_0_15px_-3px_rgba(14,165,233,0.3)]">
-                  {useCase.icon}
-                </div>
               </div>
 
-              <div className="pt-10 px-8 pb-8">
+              <div className="relative pt-10 px-8 pb-8">
+                {/* Floating Icon Badge */}
+                <div className="absolute -top-5 left-6 w-10 h-10 bg-white rounded-xl shadow-md border border-slate-100 flex items-center justify-center z-20 group-hover:-translate-y-1 transition-transform group-hover:border-[#0ea5e9]/30 group-hover:shadow-[0_0_15px_-3px_rgba(14,165,233,0.3)]">
+                  {useCase.icon}
+                </div>
+                
                 <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-[#0ea5e9] transition-colors">{useCase.title}</h3>
                 <p className="text-slate-600 leading-relaxed text-sm">
                   {useCase.description}
