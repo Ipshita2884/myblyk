@@ -52,7 +52,7 @@ export default function CTASection() {
       {/* Bottom transition fade into footer */}
       <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-[#565F70] via-[#565F70]/90 to-transparent z-30 pointer-events-none" />
 
-      <div className="max-w-5xl mx-auto px-6 relative z-10 w-full" style={{ perspective: 1500 }}>
+      <div className="max-w-4xl mx-auto px-6 relative z-10 w-full" style={{ perspective: 1500 }}>
         <motion.div
           style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
           onMouseMove={handleMouseMove}
@@ -61,10 +61,10 @@ export default function CTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative bg-white/20 backdrop-blur-3xl border border-white/40 rounded-[3rem] p-12 md:p-24 text-center shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] flex flex-col items-center"
+          className="relative bg-white/20 backdrop-blur-3xl border border-white/40 rounded-[2.5rem] p-10 md:p-16 text-center shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] flex flex-col items-center"
         >
           {/* Glass reflection highlight */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent rounded-[3rem] pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent rounded-[2.5rem] pointer-events-none" />
 
           {/* 3D Inner Content Container */}
           <motion.div style={{ transform: "translateZ(60px)" }} className="relative z-10 w-full">
@@ -74,18 +74,18 @@ export default function CTASection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.5 }}
-              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-white px-5 py-2 rounded-full text-xs font-bold tracking-widest uppercase mb-10 shadow-[0_0_20px_rgba(255,255,255,0.15)]"
+              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-white px-5 py-2 rounded-full text-xs font-bold tracking-widest uppercase mb-8 shadow-[0_0_20px_rgba(255,255,255,0.15)]"
             >
               <Sparkles className="w-4 h-4 text-amber-300" />
               Early Access Now Open
             </motion.div>
 
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-black mb-8 max-w-4xl mx-auto leading-[1.1] text-white tracking-tight drop-shadow-xl">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 max-w-3xl mx-auto leading-[1.15] text-white tracking-tight drop-shadow-xl">
               Ready to Pre-Book <br className="hidden md:block"/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-200 drop-shadow-sm">AI-Wear?</span>
             </h2>
 
-            <p className="text-blue-50/90 text-lg md:text-2xl mb-14 max-w-2xl mx-auto leading-relaxed font-medium">
+            <p className="text-blue-50/90 text-lg md:text-xl mb-12 max-w-xl mx-auto leading-relaxed font-medium">
               Join our early access list. Be among the first to experience a new standard in assistive technology.
             </p>
 
