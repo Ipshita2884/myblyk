@@ -77,7 +77,7 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* Right Actions */}
+          {/* Right Actions (Desktop) */}
           <div className="hidden md:flex items-center gap-6">
             <Link href="/auth" className="text-gray-600 hover:text-brand-navy font-medium transition-colors">
               Sign In
@@ -89,8 +89,62 @@ export default function Navbar() {
               Explore AI-Wear
             </Link>
           </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden flex items-center">
+            <button 
+              className="p-2 text-slate-600 hover:text-slate-900 focus:outline-none"
+              onClick={() => setHoveredPath(hoveredPath === 'mobile' ? null : 'mobile')}
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={hoveredPath === 'mobile' ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      <AnimatePresence>
+        {hoveredPath === 'mobile' && (
+          <motion.div 
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-white border-t border-gray-100 overflow-hidden"
+          >
+            <div className="px-4 pt-2 pb-6 space-y-2 flex flex-col">
+              {NAV_LINKS.map((link) => (
+                <Link
+                  key={link.path}
+                  href={link.path}
+                  onClick={() => setHoveredPath(null)}
+                  className={`block px-4 py-3 rounded-xl ${
+                    isActive(link.path) ? "bg-sky-50 text-[#0ea5e9] font-bold" : "text-slate-600 font-medium hover:bg-gray-50"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+              <div className="h-px bg-gray-100 my-2"></div>
+              <Link 
+                href="/auth" 
+                onClick={() => setHoveredPath(null)}
+                className="block px-4 py-3 text-slate-600 font-medium hover:bg-gray-50 rounded-xl"
+              >
+                Sign In
+              </Link>
+              <Link 
+                href="/ai-wear" 
+                onClick={() => setHoveredPath(null)}
+                className="block mt-2 bg-[#0ea5e9] text-white px-4 py-3 rounded-xl font-bold text-center"
+              >
+                Explore AI-Wear
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }

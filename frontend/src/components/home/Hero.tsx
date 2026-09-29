@@ -77,13 +77,8 @@ export default function Hero() {
               <div className="absolute inset-0 bg-brand-navy/20 mix-blend-multiply"></div>
             </div>
 
-            {/* Play Button */}
-            <button className="relative z-20 w-16 h-16 bg-white rounded-full flex items-center justify-center text-brand-blue shadow-xl hover:scale-105 transition-transform">
-              <Play className="w-6 h-6 ml-1" fill="currentColor" />
-            </button>
-
             {/* Floating Card 1: Vision AI */}
-            <div className="absolute top-12 right-[-20px] lg:right-[-40px] z-20 bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-white/50 w-64 transform hover:-translate-y-1 transition-transform">
+            <div className="absolute top-8 sm:top-12 right-0 sm:-right-4 lg:-right-8 z-20 bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-white/50 w-56 sm:w-64 transform hover:-translate-y-1 transition-transform">
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600">
                   <Eye className="w-4 h-4" />
@@ -101,21 +96,23 @@ export default function Hero() {
             </div>
 
             {/* Floating Card 2: Edge AI */}
-            <div className="absolute top-1/2 left-[-20px] lg:left-[-60px] -translate-y-1/2 z-20 bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-white/50 w-60 transform hover:-translate-y-1 transition-transform">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-brand-blue">
-                  <Cpu className="w-4 h-4" />
+            <div className="absolute top-1/2 left-0 sm:-left-4 lg:-left-12 -translate-y-1/2 z-20">
+              <div className="bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-white/50 w-52 sm:w-60 transform hover:-translate-y-1 transition-transform">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-brand-blue">
+                    <Cpu className="w-4 h-4" />
+                  </div>
+                  <span className="font-semibold text-sm">Edge AI</span>
                 </div>
-                <span className="font-semibold text-sm">Edge AI</span>
-              </div>
-              <p className="text-xs text-gray-500 mb-3">On-device inference in &lt;50ms</p>
-              <div className="h-1.5 w-full bg-gray-200 rounded-full overflow-hidden">
-                <div className="h-full bg-gradient-to-r from-blue-400 to-brand-blue w-[85%] rounded-full"></div>
+                <p className="text-xs text-gray-500 mb-3">On-device inference in &lt;50ms</p>
+                <div className="h-1.5 w-full bg-gray-200 rounded-full overflow-hidden">
+                  <div className="h-full bg-gradient-to-r from-blue-400 to-brand-blue w-[85%] rounded-full"></div>
+                </div>
               </div>
             </div>
 
             {/* Floating Card 3: Works Offline */}
-            <div className="absolute bottom-16 right-10 z-20 bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-white/50 w-56 transform hover:-translate-y-1 transition-transform">
+            <div className="absolute bottom-8 sm:bottom-16 right-4 sm:right-10 z-20 bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-white/50 w-48 sm:w-56 transform hover:-translate-y-1 transition-transform">
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
                   <Shield className="w-4 h-4" />
