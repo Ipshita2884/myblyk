@@ -43,12 +43,16 @@ export default function CareersHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <Link href="#open-positions">
-            <button className="bg-[#0ea5e9] hover:bg-[#0284c7] text-white font-semibold px-8 py-4 rounded-xl transition-all flex items-center gap-2 shadow-md shadow-[#0ea5e9]/20 hover:shadow-[#0ea5e9]/40 hover:-translate-y-0.5">
-              View Open Positions
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </Link>
+          <button 
+            onClick={() => {
+              window.location.hash = "open-positions";
+              window.dispatchEvent(new Event('hashchange'));
+            }}
+            className="bg-[#0ea5e9] hover:bg-[#0284c7] text-white font-semibold px-8 py-4 rounded-xl transition-all flex items-center gap-2 shadow-md shadow-[#0ea5e9]/20 hover:shadow-[#0ea5e9]/40 hover:-translate-y-0.5"
+          >
+            View Open Positions
+            <ArrowRight className="w-4 h-4" />
+          </button>
         </motion.div>
       </div>
     </section>

@@ -2,13 +2,13 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#565F70] text-slate-300 pt-20 pb-8 relative z-30 mt-16">
+    <footer className="bg-[#565F70] text-slate-300 pt-20 pb-8 relative z-30">
       {/* Blurry fade effect extending upwards to blend the footer with any section above it */}
-      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-t from-[#565F70] via-[#565F70]/80 to-transparent -translate-y-full pointer-events-none" />
+      <div className="absolute top-0 left-0 w-full h-12 bg-gradient-to-t from-[#565F70] via-[#565F70]/80 to-transparent -translate-y-full pointer-events-none" />
       
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
-          <div className="lg:col-span-2 pr-8">
+      <div className="w-full px-8 md:px-16 lg:px-24 max-w-[100rem] mx-auto">
+        <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-8 mb-16">
+          <div className="max-w-md pr-0 lg:pr-8">
             <div className="flex items-center gap-3 mb-6">
               <div className="bg-[#0ea5e9] p-2 rounded-lg text-white shadow-sm">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -17,47 +17,42 @@ export default function Footer() {
                 </svg>
               </div>
               <div>
-                <h1 className="font-bold text-white text-lg leading-tight">Trinetrum Ventures</h1>
-                <p className="text-xs text-slate-400 font-medium tracking-wide">Private Limited</p>
+                <h1 className="font-bold text-white text-xl leading-tight">Trinetrum Ventures</h1>
+                <p className="text-sm text-slate-400 font-medium tracking-wide">Private Limited</p>
               </div>
             </div>
-            <p className="text-sm leading-relaxed max-w-sm mb-8 text-slate-300">
+            <p className="text-base leading-relaxed mb-8 text-slate-300">
               Building the future of assistive technology through AI-powered wearables. Empowering the visually impaired to experience the world with independence and dignity.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full border border-slate-400 flex items-center justify-center hover:bg-slate-500 hover:text-white hover:border-white transition-colors text-slate-300 text-sm font-medium">L</a>
-              <a href="#" className="w-10 h-10 rounded-full border border-slate-400 flex items-center justify-center hover:bg-slate-500 hover:text-white hover:border-white transition-colors text-slate-300 text-sm font-medium">T</a>
-              <a href="#" className="w-10 h-10 rounded-full border border-slate-400 flex items-center justify-center hover:bg-slate-500 hover:text-white hover:border-white transition-colors text-slate-300 text-sm font-medium">G</a>
+              <a href="#" className="w-12 h-12 rounded-full border border-slate-400 flex items-center justify-center hover:bg-slate-500 hover:text-white hover:border-white transition-colors text-slate-300 text-base font-medium">L</a>
+              <a href="#" className="w-12 h-12 rounded-full border border-slate-400 flex items-center justify-center hover:bg-slate-500 hover:text-white hover:border-white transition-colors text-slate-300 text-base font-medium">T</a>
+              <a href="#" className="w-12 h-12 rounded-full border border-slate-400 flex items-center justify-center hover:bg-slate-500 hover:text-white hover:border-white transition-colors text-slate-300 text-base font-medium">G</a>
             </div>
           </div>
 
-          <div>
-            <h3 className="text-white font-bold text-base mb-6">Company</h3>
-            <ul className="space-y-4 text-sm font-medium">
-              <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
-              <li><Link href="/careers" className="hover:text-white transition-colors">Careers</Link></li>
-              <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
-              <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
-            </ul>
-          </div>
+          <div className="flex flex-col sm:flex-row gap-16 md:gap-32">
+            <div>
+              <h3 className="text-white font-bold text-lg mb-6">Company</h3>
+              <ul className="space-y-4 text-base font-medium">
+                <li><Link href="/ai-wear" className="hover:text-white transition-colors">AI-Wear</Link></li>
+                <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
+                <li><Link href="/faqs" className="hover:text-white transition-colors">FAQs</Link></li>
+                <li><Link href="/careers" className="hover:text-white transition-colors">Careers</Link></li>
+                <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
+                <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
+              </ul>
+            </div>
 
-          <div>
-            <h3 className="text-white font-bold text-base mb-6">Product</h3>
-            <ul className="space-y-4 text-sm font-medium">
-              <li><Link href="/ai-wear" className="hover:text-white transition-colors">AI-Wear</Link></li>
-              <li><Link href="/faqs" className="hover:text-white transition-colors">FAQs</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Dashboard</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-white font-bold text-base mb-6">Legal & Policies</h3>
-            <ul className="space-y-4 text-sm font-medium">
-              <li><Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link></li>
-              <li><Link href="/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link></li>
-              <li><Link href="/disclaimer" className="hover:text-white transition-colors">Disclaimer</Link></li>
-            </ul>
+            <div>
+              <h3 className="text-white font-bold text-lg mb-6">Legal & Policies</h3>
+              <ul className="space-y-4 text-base font-medium">
+                <li><Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+                <li><Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link></li>
+                <li><Link href="/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link></li>
+                <li><Link href="/disclaimer" className="hover:text-white transition-colors">Disclaimer</Link></li>
+              </ul>
+            </div>
           </div>
         </div>
 

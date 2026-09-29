@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Eye, ChevronDown } from "lucide-react";
 
@@ -17,11 +17,39 @@ const NAV_LINKS = [
 export default function Navbar() {
   const pathname = usePathname();
   const [hoveredPath, setHoveredPath] = useState<string | null>(null);
+  
+  // Smart Navbar State
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // If at the very top, always show
+      if (currentScrollY < 50) {
+        setShowNavbar(true);
+      } else {
+        // If scrolling UP, show navbar. If scrolling DOWN, hide it.
+        if (currentScrollY < lastScrollY) {
+          setShowNavbar(true);
+        } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+          setShowNavbar(false);
+          // Also close mobile menu if it's open
+          setHoveredPath(null);
+        }
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   const isActive = (path: string) => pathname === path;
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <nav className={`fixed top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-100 transition-transform duration-300 ease-in-out ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           {/* Logo */}

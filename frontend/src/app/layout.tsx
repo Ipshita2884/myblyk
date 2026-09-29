@@ -12,6 +12,8 @@ export const metadata: Metadata = {
   description: "Building AI-Wear — a breakthrough smart eyewear platform that uses on-device computer vision and edge AI to give the visually impaired a new way to experience the world.",
 };
 
+import ScrollToTop from "@/components/layout/ScrollToTop";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -22,7 +24,10 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="min-h-full flex flex-col font-sans">
+        {children}
+        <ScrollToTop />
+      </body>
     </html>
   );
 }
