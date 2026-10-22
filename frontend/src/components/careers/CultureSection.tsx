@@ -45,85 +45,87 @@ export default function CultureSection() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        {/* Header Section - Full Width */}
+        <div className="text-center mb-12">
+          <motion.div 
+            initial={{ opacity: 0, y: 20, scale: 0.9 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-[#f0f7ff] to-[#e0e7ff] text-[#0ea5e9] px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase mb-8 shadow-lg shadow-[#0ea5e9]/10 border border-blue-100/50"
+          >
+            <motion.div
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0.5, 1, 0.5],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="w-2 h-2 rounded-full bg-[#0ea5e9]"
+            />
+            LIFE AT MYBLYK
+          </motion.div>
+
+          <motion.h2 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-4xl md:text-5xl font-extrabold mb-8 leading-tight text-slate-900 tracking-tight"
+          >
+            A Culture Built for People Who Want to Build
+          </motion.h2>
+
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-slate-600 text-lg leading-relaxed max-w-3xl mx-auto"
+          >
+            We are an early-stage team where curiosity, ownership and willingness to learn matter as much as existing skills. You will have the opportunity to contribute, ask questions and see your work become part of something real.
+          </motion.p>
+        </div>
+
+        {/* Content and Images Side by Side */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           
-          {/* Left Text Content */}
-          <div className="pr-0 lg:pr-8">
-            <motion.div 
-              initial={{ opacity: 0, y: 20, scale: 0.9 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#f0f7ff] to-[#e0e7ff] text-[#0ea5e9] px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase mb-8 shadow-lg shadow-[#0ea5e9]/10 border border-blue-100/50"
-            >
-              <motion.div
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.5, 1, 0.5],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="w-2 h-2 rounded-full bg-[#0ea5e9]"
-              />
-              LIFE AT MYBLYK
-            </motion.div>
-
-            <motion.h2 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl md:text-5xl font-extrabold mb-8 leading-tight text-slate-900 tracking-tight"
-            >
-              A Culture Built for People Who Want to <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0ea5e9] to-purple-500">Build</span>
-            </motion.h2>
-
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-slate-600 text-lg leading-relaxed mb-10"
-            >
-              We are an early-stage team where curiosity, ownership and willingness to learn matter as much as existing skills. You will have the opportunity to contribute, ask questions and see your work become part of something real.
-            </motion.p>
-
-            <div className="space-y-4">
-              {bullets.map((bullet, index) => (
-                <motion.div 
-                  key={index}
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ delay: 0.3 + (index * 0.08), duration: 0.5 }}
-                  whileHover={{ x: 5 }}
-                  className="flex items-start gap-4 group"
+          {/* Left - Bullet Points */}
+          <div className="space-y-4">
+            {bullets.map((bullet, index) => (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: 0.3 + (index * 0.08), duration: 0.5 }}
+                whileHover={{ x: 5 }}
+                className="flex items-start gap-4 group"
+              >
+                <motion.div
+                  whileHover={{ scale: 1.2, rotate: 10 }}
+                  transition={{ duration: 0.2 }}
+                  className="shrink-0 mt-0.5"
                 >
-                  <motion.div
-                    whileHover={{ scale: 1.2, rotate: 10 }}
-                    transition={{ duration: 0.2 }}
-                    className="shrink-0 mt-0.5"
-                  >
-                    <CheckCircle2 className="w-5 h-5 text-[#0ea5e9] group-hover:text-[#0284c7] transition-colors" />
-                  </motion.div>
-                  <p className="text-slate-600 font-medium text-sm md:text-base group-hover:text-slate-900 transition-colors">{bullet}</p>
+                  <CheckCircle2 className="w-5 h-5 text-[#0ea5e9] group-hover:text-[#0284c7] transition-colors" />
                 </motion.div>
-              ))}
-            </div>
+                <p className="text-slate-600 font-medium text-sm md:text-base group-hover:text-slate-900 transition-colors">{bullet}</p>
+              </motion.div>
+            ))}
           </div>
 
-          {/* Right Image Grid */}
-          <div className="grid grid-cols-2 gap-4 h-full relative">
+          {/* Right - Image Grid */}
+          <div className="grid grid-cols-2 gap-x-4 gap-y-1 h-full relative">
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
               whileHover={{ scale: 1.05, y: -5 }}
-              className="rounded-[1.5rem] overflow-hidden aspect-[4/3] relative shadow-lg hover:shadow-2xl hover:shadow-[#0ea5e9]/20 transition-all duration-500 group"
+              className="rounded-[1.5rem] overflow-hidden aspect-square relative shadow-lg hover:shadow-2xl hover:shadow-[#0ea5e9]/20 transition-all duration-500 group"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 
@@ -140,7 +142,7 @@ export default function CultureSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
               whileHover={{ scale: 1.05, y: -5 }}
-              className="rounded-[1.5rem] overflow-hidden aspect-[4/3] relative shadow-lg hover:shadow-2xl hover:shadow-[#0ea5e9]/20 transition-all duration-500 group"
+              className="rounded-[1.5rem] overflow-hidden aspect-square relative shadow-lg hover:shadow-2xl hover:shadow-[#0ea5e9]/20 transition-all duration-500 group"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 
@@ -157,7 +159,7 @@ export default function CultureSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
               whileHover={{ scale: 1.05, y: -5 }}
-              className="rounded-[1.5rem] overflow-hidden aspect-[4/3] relative shadow-lg hover:shadow-2xl hover:shadow-[#0ea5e9]/20 transition-all duration-500 group"
+              className="rounded-[1.5rem] overflow-hidden aspect-square relative shadow-lg hover:shadow-2xl hover:shadow-[#0ea5e9]/20 transition-all duration-500 group"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 
@@ -174,7 +176,7 @@ export default function CultureSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.5 }}
               whileHover={{ scale: 1.05, y: -5 }}
-              className="rounded-[1.5rem] overflow-hidden aspect-[4/3] relative shadow-lg hover:shadow-2xl hover:shadow-[#0ea5e9]/20 transition-all duration-500 group"
+              className="rounded-[1.5rem] overflow-hidden aspect-square relative shadow-lg hover:shadow-2xl hover:shadow-[#0ea5e9]/20 transition-all duration-500 group"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 

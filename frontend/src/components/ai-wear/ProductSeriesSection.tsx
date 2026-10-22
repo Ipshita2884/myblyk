@@ -1,11 +1,13 @@
-import { Check, Star } from 'lucide-react';
+'use client';
+
+import { Check } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export default function ProductSeriesSection() {
   const products = [
     {
-      mostPopular: true,
       imageSrc: "https://images.unsplash.com/photo-1573867639040-6dd25fa5f597?q=80&w=800&auto=format&fit=crop",
       title: "ASSIST SERIES",
       subtitle: "For Visually Impaired and Blind Users",
@@ -21,10 +23,9 @@ export default function ProductSeriesSection() {
         "Find My Glasses"
       ],
       buttonText: "Pre-Book Now",
-      buttonStyle: "bg-[#0ea5e9] hover:bg-[#0284c7] text-white border-transparent shadow-md shadow-[#0ea5e9]/20"
+      buttonStyle: "bg-[#0ea5e9] hover:bg-[#0284c7] text-white border-transparent shadow-lg shadow-[#0ea5e9]/30"
     },
     {
-      mostPopular: false,
       imageSrc: "https://images.unsplash.com/photo-1527267207156-3390c50d4d8a?q=80&w=800&auto=format&fit=crop",
       title: "ECHO SERIES",
       subtitle: "For People with Partial Hearing Loss",
@@ -39,10 +40,9 @@ export default function ProductSeriesSection() {
         "Find My Glasses"
       ],
       buttonText: "Available Soon",
-      buttonStyle: "bg-transparent hover:bg-slate-800/80 text-slate-300 border-slate-700 hover:border-slate-500"
+      buttonStyle: "bg-[#0ea5e9] hover:bg-[#0284c7] text-white border-transparent shadow-lg shadow-[#0ea5e9]/30"
     },
     {
-      mostPopular: false,
       imageSrc: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop",
       title: "EXPLORER SERIES",
       subtitle: "For Independent Travellers, Explorers, Students and Researchers",
@@ -58,7 +58,7 @@ export default function ProductSeriesSection() {
         "Find My Glasses"
       ],
       buttonText: "Pre-Book Now",
-      buttonStyle: "bg-transparent hover:bg-slate-800/80 text-slate-300 border-slate-700 hover:border-slate-500"
+      buttonStyle: "bg-[#0ea5e9] hover:bg-[#0284c7] text-white border-transparent shadow-lg shadow-[#0ea5e9]/30"
     }
   ];
 
@@ -82,58 +82,137 @@ export default function ProductSeriesSection() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 perspective-1000">
           {products.map((product, index) => (
-            <div key={index} className={`group flex flex-col bg-slate-900 backdrop-blur-md rounded-[2rem] overflow-hidden border transition-all duration-500 hover:-translate-y-2 ${product.mostPopular ? 'border-amber-500/50 shadow-[0_0_20px_-10px_rgba(245,158,11,0.4)] hover:shadow-[0_0_40px_-5px_rgba(245,158,11,0.5)] hover:border-amber-400/80 relative' : 'border-slate-700/50 hover:shadow-[0_0_40px_-10px_rgba(14,165,233,0.3)] hover:border-[#0ea5e9]/50 shadow-lg'}`}>
-              
-              {product.mostPopular && (
-                <div className="bg-gradient-to-r from-amber-400 to-yellow-600 text-white text-xs font-bold uppercase tracking-wider py-2 text-center flex justify-center items-center gap-1 w-full absolute top-0 z-20 shadow-md">
-                  <Star className="w-3 h-3 fill-current" /> Most Popular
-                </div>
-              )}
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50, rotateX: 10 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              whileHover={{
+                y: -10,
+                rotateX: 5,
+                rotateY: 5,
+                scale: 1.02,
+                transition: { duration: 0.3 }
+              }}
+              className="group flex flex-col bg-slate-900/90 backdrop-blur-xl rounded-[2rem] overflow-hidden border border-slate-700/50 hover:shadow-[0_20px_60px_-15px_rgba(14,165,233,0.4)] hover:border-[#0ea5e9]/50 shadow-2xl transition-all duration-500 relative"
+              style={{ transformStyle: 'preserve-3d' }}
+            >
+              {/* Glow effect on hover */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-[#0ea5e9]/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                initial={false}
+              />
 
               {/* Image Graphic */}
               <div className="relative w-full h-56 overflow-hidden">
-                <div className="absolute inset-0 bg-brand-navy/40 mix-blend-multiply z-10 group-hover:bg-brand-navy/10 transition-colors duration-500"></div>
-                <img 
-                  src={product.imageSrc} 
-                  alt={product.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                <motion.div
+                  className="absolute inset-0 bg-brand-navy/40 mix-blend-multiply z-10 group-hover:bg-brand-navy/10 transition-colors duration-500"
+                  initial={{ opacity: 0.4 }}
+                  whileHover={{ opacity: 0.1 }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent z-10"></div>
+                <motion.img
+                  src={product.imageSrc}
+                  alt={product.title}
+                  className="w-full h-full object-cover"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.7 }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent z-10"></div>
+
+                {/* Shine effect */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
+                  animate={{
+                    x: ['-100%', '200%'],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    repeatDelay: 2,
+                    ease: "linear"
+                  }}
+                />
               </div>
 
-              <div className="p-8 flex flex-col flex-grow relative z-20 -mt-8">
-                <h3 className={`text-2xl font-bold text-white mb-1 transition-colors ${product.mostPopular ? 'group-hover:text-amber-400' : 'group-hover:text-[#0ea5e9]'}`}>{product.title}</h3>
-                <p className={`${product.mostPopular ? 'text-amber-400' : 'text-[#0ea5e9]'} font-semibold text-sm mb-4`}>{product.subtitle}</p>
-                
+              <motion.div
+                className="p-8 flex flex-col flex-grow relative z-20 -mt-8"
+                initial={{ y: 0 }}
+                whileHover={{ y: -5 }}
+                transition={{ duration: 0.3 }}
+              >
+                <motion.h3
+                  className="text-2xl font-bold text-white mb-1"
+                  whileHover={{ color: '#0ea5e9' }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {product.title}
+                </motion.h3>
+                <motion.p
+                  className="text-[#0ea5e9] font-semibold text-sm mb-4"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {product.subtitle}
+                </motion.p>
+
                 <p className="text-slate-400 text-sm leading-relaxed mb-4 min-h-[80px]">
                   {product.description}
                 </p>
-                
+
                 <p className="text-xs text-slate-500 font-medium mb-6 pb-6 border-b border-slate-700/50">
                   <span className="text-slate-600">For:</span> {product.targetAudience}
                 </p>
-                
+
                 <ul className="space-y-3 mb-8 flex-grow">
                   {product.features.map((feature, fIndex) => (
-                    <li key={fIndex} className="flex items-start gap-3 text-sm text-slate-300">
-                      <div className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 transition-colors ${product.mostPopular ? 'bg-amber-500/10 group-hover:bg-amber-500/20' : 'bg-[#0ea5e9]/10 group-hover:bg-[#0ea5e9]/20'}`}>
-                        <Check className={`w-3 h-3 ${product.mostPopular ? 'text-amber-400' : 'text-[#0ea5e9]'}`} />
-                      </div>
+                    <motion.li
+                      key={fIndex}
+                      className="flex items-start gap-3 text-sm text-slate-300"
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.3 + (fIndex * 0.05), duration: 0.3 }}
+                      whileHover={{ x: 5 }}
+                    >
+                      <motion.div
+                        className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 bg-[#0ea5e9]/10 group-hover:bg-[#0ea5e9]/20"
+                        whileHover={{ scale: 1.2, rotate: 15 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <Check className="w-3 h-3 text-[#0ea5e9]" />
+                      </motion.div>
                       {feature}
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
-                
-                <Link 
-                  href="#" 
-                  className={`w-full py-3.5 rounded-xl font-bold text-center transition-all border ${product.mostPopular ? 'bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-400 hover:to-yellow-500 text-white border-transparent shadow-md shadow-amber-500/20' : product.buttonStyle}`}
+
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  {product.buttonText}
-                </Link>
-              </div>
-            </div>
+                  <Link
+                    href="#"
+                    className={`w-full py-3.5 rounded-xl font-bold text-center transition-all border block relative overflow-hidden ${product.buttonStyle}`}
+                  >
+                    <motion.div
+                      className="absolute inset-0 bg-white/20"
+                      animate={{
+                        x: ['-100%', '100%'],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "linear"
+                      }}
+                    />
+                    <span className="relative z-10">{product.buttonText}</span>
+                  </Link>
+                </motion.div>
+              </motion.div>
+            </motion.div>
           ))}
         </div>
 

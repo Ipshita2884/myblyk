@@ -146,19 +146,7 @@ export default function CareersHero() {
           className="text-5xl md:text-7xl font-extrabold mb-8 leading-[1.1] text-slate-900 tracking-tight"
         >
           Build Technology<br />
-          <motion.span 
-            className="text-transparent bg-clip-text bg-gradient-to-r from-[#0ea5e9] via-purple-500 to-[#0ea5e9] bg-[length:200%_auto]"
-            animate={{
-              backgroundPosition: ['0% center', '200% center', '0% center'],
-            }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-          >
-            That Solves Real Problems
-          </motion.span>
+          That Solves Real Problems
         </motion.h1>
 
         <motion.p 

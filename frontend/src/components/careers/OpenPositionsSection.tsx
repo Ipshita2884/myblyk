@@ -270,7 +270,7 @@ export default function OpenPositionsSection() {
             OPEN POSITIONS
           </motion.div>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-8">
-            Find your <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0ea5e9] to-purple-500">role</span>
+            Find your role
           </h2>
           
           {/* Categories */}

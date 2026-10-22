@@ -97,7 +97,7 @@ export default function WhyJoinUs() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight text-slate-900 tracking-tight"
           >
-            More Than Just a <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0ea5e9] to-purple-500">Job</span>
+            More Than Just a Job
           </motion.h2>
 
           <motion.p 
