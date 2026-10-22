@@ -1,10 +1,9 @@
-import Image from "next/image";
-import { Sparkles, ArrowRight, Play, Eye, Cpu, Shield, ChevronRight } from "lucide-react";
+import { Sparkles, ArrowRight, ChevronRight, Eye, Cpu, Shield } from "lucide-react";
 import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative pt-20 pb-32 overflow-hidden bg-background-light">
+    <section className="relative pt-32 pb-32 overflow-hidden bg-background-light">
       <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-20 mix-blend-overlay"></div>
       
       {/* Subtle Theme Gradients */}
@@ -22,30 +21,31 @@ export default function Hero() {
           
           {/* Left Content */}
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-brand-blue font-medium text-sm mb-8 border border-blue-100">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-brand-blue font-medium text-sm mb-8 mt-4 border border-blue-100">
               <Sparkles className="w-4 h-4" />
-              <span>AI-Powered Assistive Technology</span>
+              <span>AI-POWERED ASSISTANCE</span>
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight text-brand-navy leading-[1.1] mb-6">
-              Vision, <br />
-              <span className="text-brand-blue">Redefined</span> <br />
-              by Intelligence
-            </h1>
+  See the World.<br />
+  <span className="text-brand-blue">Understand More.</span>
+</h1>
             
             <p className="text-lg text-gray-600 mb-10 leading-relaxed max-w-xl">
-              Trinetrum Ventures is building AI-Wear — a breakthrough smart eyewear platform that uses on-device computer vision and edge AI to give the visually impaired a new way to experience the world.
+              A new way to experience the world. MyBlyk brings AI‑powered awareness to everyday life,
+              helping people with visual impairments navigate their surroundings with greater
+              confidence and independence.
             </p>
             
             <div className="flex flex-wrap items-center gap-4 mb-12">
-              <Link 
-                href="/explore" 
+              <Link
+                href="/ai-wear"
                 className="flex items-center gap-2 bg-[#0ea5e9] hover:bg-[#0284c7] text-white px-8 py-3.5 rounded-xl font-bold transition-all text-lg shadow-lg shadow-[#0ea5e9]/20 hover:shadow-[#0ea5e9]/40 hover:-translate-y-0.5"
               >
-                Explore AI-Wear <ArrowRight className="w-5 h-5" />
+                Explore MyBlyk <ArrowRight className="w-5 h-5" />
               </Link>
-              <Link 
-                href="#about" 
+              <Link
+                href="/about"
                 className="flex items-center gap-2 bg-white hover:bg-gray-50 text-gray-700 px-8 py-3.5 rounded-xl font-bold transition-all border border-gray-200 text-lg hover:-translate-y-0.5 shadow-sm"
               >
                 About Us <ChevronRight className="w-5 h-5" />
@@ -69,9 +69,9 @@ export default function Hero() {
           <div className="relative lg:ml-10 mt-10 lg:mt-0 h-[600px] flex items-center justify-center">
             {/* Main Image */}
             <div className="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl">
-              <img 
-                src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2070&auto=format&fit=crop" 
-                alt="Hardware engineering" 
+              <img
+                src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2070&auto=format&fit=crop"
+                alt="Hardware engineering"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-brand-navy/20 mix-blend-multiply"></div>
@@ -104,7 +104,7 @@ export default function Hero() {
                   </div>
                   <span className="font-semibold text-sm">Edge AI</span>
                 </div>
-                <p className="text-xs text-gray-500 mb-3">On-device inference in &lt;50ms</p>
+                <p className="text-xs text-gray-500 mb-3">On-device processing for core functions</p>
                 <div className="h-1.5 w-full bg-gray-200 rounded-full overflow-hidden">
                   <div className="h-full bg-gradient-to-r from-blue-400 to-brand-blue w-[85%] rounded-full"></div>
                 </div>
@@ -117,9 +117,9 @@ export default function Hero() {
                 <div className="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
                   <Shield className="w-4 h-4" />
                 </div>
-                <span className="font-semibold text-sm">Works Offline</span>
+                <span className="font-semibold text-sm">Privacy First</span>
               </div>
-              <p className="text-xs text-gray-500 mb-3">No cloud dependency. Private by design.</p>
+              <p className="text-xs text-gray-500 mb-3">Designed with user privacy in mind</p>
               <div className="w-8 h-8 mx-auto rounded-full border-2 border-purple-200 flex items-center justify-center">
                  <div className="w-4 h-4 rounded-full bg-purple-100 flex items-center justify-center">
                     <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>

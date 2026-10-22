@@ -2,19 +2,29 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { ReactNode } from "react";
 
-const FAQ_DATA = [
+interface FAQItem {
+  question: string;
+  answer: string | ReactNode;
+}
+
+const FAQ_DATA: FAQItem[] = [
   {
-    question: "How do I pre-book AI-Wear?",
-    answer: "You can pre-book AI-Wear by filling out the contact form on this page and selecting 'Pre-Book' as the inquiry type. Our team will get back to you with the reservation details.",
+    question: "How can I pre-book MyBlyk AI Glasses?",
+    answer: (
+      <>
+        You can visit the <a href="/ai-wear" className="text-[#0ea5e9] hover:underline font-medium">MyBlyk AI Glasses page</a> to explore the current pre-booking option. The listed pre-booking amount is ₹999. Please review the applicable pre-booking terms before proceeding.
+      </>
+    ),
   },
   {
-    question: "Are you open to investor inquiries?",
-    answer: "Yes, we are actively looking for strategic partners and investors who share our vision in deep-tech and assistive AI. Please reach out via the 'Investor' inquiry type.",
+    question: "Are you open to investor enquiries?",
+    answer: "Yes, we welcome relevant investor enquiries about MyBlyk and Trinetrum Ventures. Use the contact form and select \"Investor\" so you can share your interest and relevant details with our team.",
   },
   {
     question: "Do you partner with NGOs and accessibility organizations?",
-    answer: "Absolutely. Collaboration with accessibility organizations is at the core of our mission. Let's have a conversation about what we can build together.",
+    answer: "We welcome conversations with NGOs, accessibility organizations and other relevant partners who share an interest in improving access to assistive technology. Contact us to discuss possible areas of collaboration.",
   },
 ];
 
@@ -31,7 +41,7 @@ export default function FAQAccordion() {
       <h3 className="text-2xl font-bold text-slate-900 mb-2">
         Common Questions
       </h3>
-      <p className="text-gray-500 mb-8 text-sm">Everything you need to know about the process.</p>
+      <p className="text-gray-500 mb-8 text-sm">A few helpful answers before you get in touch.</p>
 
       <div className="space-y-4">
         {FAQ_DATA.map((faq, idx) => {
@@ -70,7 +80,7 @@ export default function FAQAccordion() {
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                   >
                     <div className="px-6 pb-5 pt-0 text-slate-600 text-[13px] leading-relaxed">
-                      {faq.answer}
+                      {typeof faq.answer === 'string' ? faq.answer : faq.answer}
                     </div>
                   </motion.div>
                 )}

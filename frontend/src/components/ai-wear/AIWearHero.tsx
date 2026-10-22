@@ -13,31 +13,33 @@ export default function AIWearHero() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700 text-slate-300 font-bold text-[10px] uppercase tracking-widest mb-8 backdrop-blur-sm shadow-sm">
               <span className="w-2 h-2 rounded-full bg-[#0ea5e9] animate-pulse"></span>
-              AI-Wear Platform
+              AI-POWERED ASSISTANCE
             </div>
-            
+
             <h1 className="text-5xl lg:text-7xl font-extrabold text-white mb-8 leading-[1.1] tracking-tight">
-              AI-Wear <br />
-              <span className="text-slate-300">See the World.</span> <br />
-              <span className="text-slate-400">Understand It.</span>
+              MyBlyk AI Glasses
             </h1>
-            
+
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-300 mb-6 leading-tight">
+              Understand More of the World Around You.
+            </h2>
+
             <p className="text-lg sm:text-xl text-slate-400 mb-10 leading-relaxed max-w-xl">
-              The world's first truly offline AI-powered smart eyewear platform. Built for the visually impaired. Powered by edge intelligence. Guided by voice.
+              MyBlyk solves the problem for visually impaired and blind users, helping them access visual information, understand their surroundings and receive useful information through voice.
             </p>
-            
+
             <div className="flex flex-wrap items-center gap-4">
-              <Link 
-                href="#prebook" 
+              <Link
+                href="#prebook"
                 className="flex items-center gap-2 bg-[#0ea5e9] hover:bg-[#0284c7] text-white px-8 py-3.5 rounded-xl font-bold transition-all text-lg shadow-lg shadow-[#0ea5e9]/20 hover:shadow-[#0ea5e9]/40 hover:-translate-y-0.5"
               >
-                Pre-Book Now <ArrowRight className="w-5 h-5" />
+                Pre-Book for ₹999 <ArrowRight className="w-5 h-5" />
               </Link>
-              <Link 
-                href="#demo" 
+              <Link
+                href="#how-it-works"
                 className="flex items-center gap-2 bg-transparent hover:bg-slate-800/50 text-white px-8 py-3.5 rounded-xl font-bold transition-all border border-slate-700 text-lg hover:-translate-y-0.5"
               >
-                <Play className="w-5 h-5" /> Watch Demo
+                <Play className="w-5 h-5" /> See How It Works
               </Link>
             </div>
           </div>

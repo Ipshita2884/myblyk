@@ -12,10 +12,10 @@ export default function FaqCTA() {
       className="mt-20 max-w-4xl mx-auto bg-white rounded-2xl shadow-sm border border-gray-100 p-12 text-center"
     >
       <h2 className="text-2xl font-bold text-slate-900 mb-3">
-        Didn&apos;t find your answer?
+        Didn&apos;t Find Your Answer?
       </h2>
       <p className="text-[15px] text-slate-600 mb-8">
-        Our team is happy to answer any additional questions.
+        Still have a question about MyBlyk AI Glasses, product development, pre-booking or a possible partnership? Our team welcomes relevant enquiries and will review your message.
       </p>
       <Link 
         href="/contact"

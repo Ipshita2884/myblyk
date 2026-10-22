@@ -8,8 +8,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Trinetrum Ventures | Vision, Redefined by Intelligence",
-  description: "Building AI-Wear — a breakthrough smart eyewear platform that uses on-device computer vision and edge AI to give the visually impaired a new way to experience the world.",
+  title: "MyBlyk AI Glasses | AI-Powered Assistive Technology",
+  description: "Discover MyBlyk AI Glasses, AI-powered assistive technology being developed to help visually impaired and blind users understand their surroundings, access information and experience greater independence.",
 };
 
 import ScrollToTop from "@/components/layout/ScrollToTop";

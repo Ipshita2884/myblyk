@@ -8,8 +8,8 @@ import FAQAccordion from "@/components/contact/FAQAccordion";
 import ContactCTA from "@/components/contact/ContactCTA";
 
 export const metadata = {
-  title: "Contact Us | MyBlyk",
-  description: "Get in touch with Trinetrum Ventures. Whether you're an investor, partner, or user, let's build the future together.",
+  title: "Contact MyBlyk | Trinetrum Ventures Private Limited",
+  description: "Contact MyBlyk for AI Glasses pre-booking enquiries, investor discussions, accessibility partnerships and general questions about our assistive technology.",
 };
 
 export default function ContactPage() {

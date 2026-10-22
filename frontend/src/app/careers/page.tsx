@@ -4,8 +4,16 @@ import CareersHero from "@/components/careers/CareersHero";
 import CareersTabs from "@/components/careers/CareersTabs";
 
 export const metadata = {
-  title: "Careers | Trinetrum Ventures",
-  description: "Join our deep-tech team to build assistive technology that restores independence.",
+  title: "Careers at MyBlyk | Join Our Team",
+  description: "Explore careers at MyBlyk, an early-stage DeepTech team building AI-powered assistive technology. Learn about our work, culture and learning opportunities.",
+  keywords: [
+    "MyBlyk careers",
+    "Trinetrum Ventures careers",
+    "DeepTech internships India",
+    "AI internship",
+    "Assistive technology jobs",
+    "Remote startup internships"
+  ]
 };
 
 export default function CareersPage() {

@@ -4,22 +4,25 @@ import { motion } from 'framer-motion';
 
 const teamMembers = [
   {
-    name: "Arjun Sharma",
-    role: "Co-Founder & CEO",
-    bio: "Former ML researcher with expertise in edge AI and embedded systems. Passionate about democratizing assistive technology.",
+    name: "Tushar Vishnoi",
+    role: "CO-FOUNDER & CEO",
+    bio: "Tushar leads MyBlyk's business vision, strategic direction, and overall growth, focusing on venture development, business operations, strategic partnerships, and commercialization. With an entrepreneurial mindset and a focus on turning innovative ideas into sustainable opportunities, he works to strengthen MyBlyk's market presence, build meaningful partnerships, and transform its vision of more accessible and independent living into a lasting real-world impact.",
+    focusAreas: ["Product & Business", "Strategy & Operations"],
     image: "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?auto=format&fit=crop&w=600&q=80"
   },
   {
-    name: "Priya Nair",
-    role: "Co-Founder & CTO",
-    bio: "Computer vision engineer with 8+ years building real-time recognition systems. Led AI teams at two deep-tech startups.",
+    name: "Khushboo Khanna",
+    role: "CO-FOUNDER & CTO",
+    bio: "Khushboo leads MyBlyk's technological vision and product development, bringing together AI, computer vision, embedded systems, and assistive technology to build meaningful, real-world solutions. Alongside driving engineering and innovation, she actively contributes to business development and strategic decision-making, helping transform MyBlyk's ideas into impactful products with the potential to make everyday life more accessible and independent.",
+    focusAreas: ["Technology & AI", "Product Development"],
     image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80"
   },
   {
-    name: "Kavya Reddy",
-    role: "Head of Design & UX",
-    bio: "Human-centered designer with a background in accessibility research. Ensures AI-Wear works for real people in real contexts.",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80"
+  name: "Ipshita Jain",
+  role: "FOUNDING MEMBER & FULL STACK AND AI ENGINEER",
+  bio: "Ipshita leads software development at MyBlyk, contributing to the design and development of its application while driving AI integration and full-stack engineering. As a founding member, she works across application architecture, intelligent systems, and product development, helping transform MyBlyk’s vision into practical, user-focused technology that promotes greater accessibility and independence in everyday life.",
+  focusAreas: ["Software Development", "AI Engineering"],
+    image: "https://res.cloudinary.com/b0mw7bwl/image/upload/v1792682633/ipshita_profile.jpg"
   }
 ];
 
@@ -40,12 +43,11 @@ export default function OurTeamSection() {
           </div>
           
           <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight text-slate-900 tracking-tight">
-            The People Behind AI-Wear
+            The People Behind MyBlyk
           </h2>
-          
+
           <p className="text-slate-600 text-lg leading-relaxed">
-            A multidisciplinary team united by a shared conviction that technology can
-            make the world more accessible for everyone.
+            A multidisciplinary team bringing together technology, product thinking and a shared commitment to making assistive technology more useful in everyday life.
           </p>
         </div>
 
@@ -101,9 +103,22 @@ export default function OurTeamSection() {
                       <p className="text-[#0ea5e9] text-sm font-bold tracking-widest mb-5 uppercase">
                         {member.role}
                       </p>
-                      
+
+                      {member.focusAreas && member.focusAreas.length > 0 && (
+                        <div className="flex flex-wrap gap-2 mb-5">
+                          {member.focusAreas.map((area, idx) => (
+                            <span
+                              key={idx}
+                              className="inline-block bg-blue-50 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full border border-blue-100"
+                            >
+                              {area}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+
                       <div className="w-10 h-1 bg-blue-100 rounded-full mb-5 group-hover:w-20 group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-400 transition-all duration-500" />
-                      
+
                       <p className="text-slate-600 text-base md:text-lg leading-relaxed">
                         {member.bio}
                       </p>

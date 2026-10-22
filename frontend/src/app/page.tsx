@@ -2,6 +2,7 @@ import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/home/Hero";
 import Stats from "@/components/home/Stats";
 import ProblemSection from "@/components/home/ProblemSection";
+import QuoteStrip from "@/components/home/QuoteStrip";
 import SolutionSection from "@/components/home/SolutionSection";
 import TechnologySection from "@/components/home/TechnologySection";
 import AboutSection from "@/components/home/AboutSection";
@@ -17,13 +18,14 @@ export default function Home() {
         <Hero />
         <Stats />
         <ProblemSection />
+        <QuoteStrip />
         <SolutionSection />
         <TechnologySection />
         <AboutSection />
         <RoadmapSection />
         <CTASection />
       </main>
-      
+
       <Footer />
     </>
   );

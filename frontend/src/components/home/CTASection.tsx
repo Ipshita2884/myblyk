@@ -2,6 +2,7 @@
 
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { ArrowRight, Mail, Sparkles } from 'lucide-react';
+import Link from 'next/link';
 
 export default function CTASection() {
   const x = useMotionValue(0);
@@ -33,13 +34,13 @@ export default function CTASection() {
 
   return (
     <section className="relative py-48 md:py-56 overflow-hidden bg-slate-900 flex items-center justify-center min-h-[95vh] perspective-[2000px]">
-      
+
       {/* Cool Image Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <div className="absolute inset-0 bg-slate-900/40 mix-blend-multiply z-10" />
-        <img 
-          src="/imgbg.png" 
-          alt="Abstract 3D Background" 
+        <img
+          src="/imgbg.png"
+          alt="Abstract 3D Background"
           className="w-full h-full object-cover scale-105"
         />
         {/* Subtle grid pattern overlay over image */}
@@ -68,7 +69,7 @@ export default function CTASection() {
 
           {/* 3D Inner Content Container */}
           <motion.div style={{ transform: "translateZ(60px)" }} className="relative z-10 w-full">
-            
+
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -77,40 +78,42 @@ export default function CTASection() {
               className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-white px-5 py-2 rounded-full text-xs font-bold tracking-widest uppercase mb-8 shadow-[0_0_20px_rgba(255,255,255,0.15)]"
             >
               <Sparkles className="w-4 h-4 text-amber-300" />
-              Early Access Now Open
+              EARLY ACCESS
             </motion.div>
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 max-w-3xl mx-auto leading-[1.15] text-white tracking-tight drop-shadow-xl">
               Ready to Pre-Book <br className="hidden md:block"/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-200 drop-shadow-sm">AI-Wear?</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-200 drop-shadow-sm">MyBlyk AI Glasses?</span>
             </h2>
 
             <p className="text-blue-50/90 text-lg md:text-xl mb-12 max-w-xl mx-auto leading-relaxed font-medium">
-              Join our early access list. Be among the first to experience a new standard in assistive technology.
+              Join our early access list. Be among the early users and help shape the next generation of assistive technology.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <Link
+                href="#"
                 className="group relative bg-white text-slate-900 font-extrabold px-10 py-5 rounded-2xl flex items-center gap-3 w-full sm:w-auto justify-center shadow-[0_0_40px_rgba(255,255,255,0.4)] hover:shadow-[0_0_60px_rgba(255,255,255,0.6)] transition-all overflow-hidden"
               >
                 <div className="absolute inset-0 bg-blue-50/50 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                 <span className="relative z-10 flex items-center gap-2">
-                  Pre-Book Now
+                  Pre-Book for ₹999
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                 </span>
-              </motion.button>
+              </Link>
 
-              <motion.button
-                whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.15)" }}
-                whileTap={{ scale: 0.95 }}
+              <Link
+                href="/contact"
                 className="group bg-white/5 backdrop-blur-md border border-white/20 text-white font-bold px-10 py-5 rounded-2xl transition-all flex items-center gap-3 w-full sm:w-auto justify-center shadow-lg hover:border-white/40"
               >
                 <Mail className="w-6 h-6 opacity-80 group-hover:opacity-100 transition-opacity" />
                 Contact Us
-              </motion.button>
+              </Link>
             </div>
+
+            <p className="text-white/60 text-xs mt-8 leading-relaxed">
+              Pre-booking terms and launch benefits will be communicated according to the final applicable terms.
+            </p>
           </motion.div>
         </motion.div>
       </div>

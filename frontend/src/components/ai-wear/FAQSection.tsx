@@ -6,28 +6,32 @@ import { ChevronDown } from 'lucide-react';
 export default function FAQSection() {
   const faqs = [
     {
-      question: "Does AI-Wear require an internet connection?",
-      answer: "No. AI-Wear is built on edge intelligence, meaning all processing happens directly on the device. You do not need Wi-Fi or cellular data for core features like navigation, reading, and object detection."
+      question: "What are MyBlyk AI Glasses?",
+      answer: "MyBlyk AI Glasses are AI-powered smart glasses being developed primarily for visually impaired and blind users. They are designed to help users access visual information and better understand their surroundings through voice-based interaction."
     },
     {
-      question: "How accurate is the object and text recognition?",
-      answer: "Our models achieve over 99% accuracy in standard lighting conditions. For text, it can read everything from street signs to fine print on medication bottles instantly."
+      question: "Do MyBlyk AI Glasses work without the internet?",
+      answer: "Selected core safety-oriented capabilities are being designed around on-device Edge AI, reducing the need for constant internet connectivity for those functions. More complex or computationally intensive capabilities may require mobile or cloud processing."
     },
     {
-      question: "How long does the battery last?",
-      answer: "The Assist Series provides up to 16 hours of continuous use on a single charge, while the Explorer Series extends this to 24 hours with its expanded battery module."
+      question: "What can MyBlyk AI Glasses currently do?",
+      answer: "MyBlyk is at the prototype and development stage. Object detection has been confirmed, while capabilities such as text reading, scene understanding and other functions have reached different prototype or development stages. The final commercial capability set is still being developed."
     },
     {
-      question: "Is my visual data stored anywhere?",
-      answer: "No. Privacy is our foundational principle. No visual data ever leaves the device. There is no cloud storage, no data mining, and no risk of a privacy breach."
+      question: "How does MyBlyk provide information to the user?",
+      answer: "MyBlyk is designed around voice/audio output. The current product concept uses an open-ear speaker positioned on the right-hand-side temple to communicate information to the user."
     },
     {
-      question: "When will AI-Wear be commercially available?",
-      answer: "We are currently in the final stages of clinical and field testing. Pre-orders will begin shipping in Q4 2026."
+      question: "When will MyBlyk AI Glasses be available?",
+      answer: "MyBlyk is progressing from proof-of-concept development towards product-design prototyping and testing. The planned roadmap targets consumer launch in April 2027, subject to development progress."
     },
     {
-      question: "Can AI-Wear be used by people with partial vision?",
-      answer: "Absolutely. The system can be customized to provide only the specific information you need, augmenting your existing vision rather than overwhelming you with unnecessary audio."
+      question: "Can people with partial vision use MyBlyk?",
+      answer: "MyBlyk is being developed primarily for visually impaired and blind users. Suitability for different levels of vision loss will depend on the final product capabilities and individual needs."
+    },
+    {
+      question: "Do the glasses guarantee safety or replace human assistance?",
+      answer: "No. MyBlyk is being developed to support environmental awareness and access to information. It should not be treated as a guarantee of safety or a complete replacement for mobility aids, human assistance or personal judgement."
     }
   ];
 
@@ -42,9 +46,9 @@ export default function FAQSection() {
           <div className="inline-flex px-4 py-1.5 rounded-full bg-sky-50 text-[#0ea5e9] font-bold text-xs uppercase tracking-widest mb-6 border border-sky-100 shadow-sm">
             FAQ
           </div>
-          
+
           <h2 className="text-4xl font-extrabold text-slate-900 mb-6 tracking-tight">
-            Questions about AI-Wear
+            Frequently Asked Questions
           </h2>
         </div>
 

@@ -1,135 +1,270 @@
 'use client';
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Award, Star, Trophy, Medal } from 'lucide-react';
+import { motion, useAnimation, useMotionValue, useTransform, AnimatePresence } from 'framer-motion';
+import { useRef, useState } from 'react';
 
-const awards = [
-  {
-    title: "Best Assistive Tech Startup",
-    organization: "Global AI Summit",
-    description: "Recognized for groundbreaking innovations in edge-AI processing for visually impaired individuals.",
-    icon: <Trophy className="w-8 h-8 md:w-10 md:h-10 text-white" />,
-    image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-  },
-  {
-    title: "Accessibility Design Award",
-    organization: "UX India",
-    description: "Awarded for creating an inclusive, hardware-first user experience that prioritizes privacy.",
-    icon: <Medal className="w-8 h-8 md:w-10 md:h-10 text-white" />,
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-  },
-  {
-    title: "Top 10 AI Wearables",
-    organization: "Tech Innovators",
-    description: "Featured as a leading hardware solution pushing the boundaries of embedded vision models.",
-    icon: <Star className="w-8 h-8 md:w-10 md:h-10 text-white" />,
-    image: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-  },
-  {
-    title: "Social Impact Grant",
-    organization: "Tech For Good",
-    description: "Received prestigious funding to scale our manufacturing and reach more users globally.",
-    icon: <Award className="w-8 h-8 md:w-10 md:h-10 text-white" />,
-    image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-  }
+const partners = [
+  { name: "Reliance", color: "#ED1C24" },
+  { name: "Pixis", color: "#6366F1" },
+  { name: "Globality", color: "#0891B2" },
+  { name: "Leadsquared", color: "#F97316" },
+  { name: "Accenture", color: "#A100FF" },
+  { name: "Edureka!", color: "#DC2626" }
 ];
 
 export default function RecognitionAwardsSection() {
-  const [hoverIndex, setHoverIndex] = useState<number>(0);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="py-24 relative z-10">
+    <section className="py-24 relative z-10 overflow-hidden">
+      
+      {/* Animated Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-white pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-100/40 via-transparent to-transparent pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.div 
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 bg-[#f0f7ff] text-[#0ea5e9] px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-8 shadow-sm border border-blue-100"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-[#0ea5e9] px-5 py-2 rounded-full text-xs font-bold tracking-widest uppercase mb-8 shadow-lg border border-blue-100/50"
           >
-            <div className="w-1.5 h-1.5 rounded-full bg-[#0ea5e9]"></div>
-            ACHIEVEMENTS
+            <motion.div 
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="w-2 h-2 rounded-full bg-[#0ea5e9]"
+            />
+            TRUSTED BY INDUSTRY LEADERS
           </motion.div>
-          
-          <motion.h2 
+
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight text-slate-900 tracking-tight"
+            className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent tracking-tight"
           >
-            Recognition & Awards
+            Building With the Best
           </motion.h2>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-slate-600 text-lg max-w-2xl mx-auto"
+            className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed"
           >
-            We build for the people, not the praise. Yet, we are deeply honored when our engineering dedication is recognized.
+            We're proud to collaborate with world-class organizations that share our vision for accessible technology.
           </motion.p>
         </div>
 
-        {/* Expanding Cards (Accordion) */}
-        <div className="flex flex-col md:flex-row w-full h-[600px] gap-4 md:gap-4 mt-12">
-          {awards.map((award, index) => {
-            const isActive = hoverIndex === index;
-            
-            return (
-              <motion.div
-                key={index}
-                onMouseEnter={() => setHoverIndex(index)}
-                onClick={() => setHoverIndex(index)}
-                className={`relative overflow-hidden rounded-[2rem] cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group shadow-2xl ${
-                  isActive ? "flex-[4] md:flex-[5]" : "flex-1 hover:flex-[1.2]"
-                }`}
-              >
-                {/* Background Image */}
-                <img 
-                  src={award.image} 
-                  alt={award.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                />
-                
-                {/* Gradient Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10 transition-opacity duration-700"></div>
-                <div className={`absolute inset-0 bg-black transition-opacity duration-700 ${isActive ? "opacity-0" : "opacity-40"}`}></div>
-                
-                {/* Content Container */}
-                <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
-                  <div className="flex items-center gap-4">
-                    {/* Icon */}
-                    <div className={`flex-shrink-0 flex items-center justify-center rounded-2xl backdrop-blur-md border border-white/20 transition-all duration-500 ${isActive ? 'w-14 h-14 md:w-16 md:h-16 bg-white/20' : 'w-12 h-12 bg-black/30'}`}>
-                      {award.icon}
-                    </div>
-                    
-                    {/* Title (Only visible when active) */}
-                    <div className={`overflow-hidden transition-all duration-700 whitespace-nowrap ${isActive ? "opacity-100 translate-x-0 max-w-full" : "opacity-0 -translate-x-10 max-w-0"}`}>
-                      <div className="text-sky-400 text-xs font-bold uppercase tracking-wider mb-1">
-                        {award.organization}
-                      </div>
-                      <h3 className="text-white text-xl md:text-3xl font-bold leading-tight">
-                        {award.title}
-                      </h3>
-                    </div>
-                  </div>
-                  
-                  {/* Description (Only visible when active) */}
-                  <div className={`overflow-hidden transition-all duration-700 delay-100 ${isActive ? "max-h-40 opacity-100 mt-6" : "max-h-0 opacity-0 mt-0"}`}>
-                    <p className="text-slate-300 text-sm md:text-base leading-relaxed md:max-w-lg border-l-2 border-sky-400 pl-4">
-                      {award.description}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
+        {/* Flowing Icons Section */}
+        <div className="relative max-w-5xl mx-auto overflow-hidden">
+          {/* Glow Effect */}
+          <motion.div
+            animate={{
+              opacity: [0.3, 0.6, 0.3],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-to-r from-blue-400/20 via-indigo-400/20 to-purple-400/20 rounded-full blur-3xl pointer-events-none"
+          />
+
+          {/* First Row - Left to Right */}
+          <div className="mb-8 relative py-8">
+            <motion.div
+              initial={{ x: 0 }}
+              animate={{ x: '-50%' }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="flex gap-8 w-max"
+            >
+              {[...partners, ...partners, ...partners].map((partner, index) => (
+                <motion.div
+                  key={`row1-${index}`}
+                  onMouseEnter={() => setHoveredIndex(index % partners.length)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                  whileHover={{
+                    scale: 1.15,
+                    rotateY: 15,
+                    rotateX: -10,
+                    z: 50,
+                  }}
+                  style={{
+                    transformStyle: 'preserve-3d',
+                    perspective: 1000,
+                  }}
+                  className="flex-shrink-0 relative group"
+                >
+                  {/* Card */}
+                  <motion.div
+                    animate={{
+                      boxShadow: hoveredIndex === index % partners.length
+                        ? `0 25px 50px -12px ${partner.color}40`
+                        : "0 10px 30px -10px rgba(0,0,0,0.1)",
+                    }}
+                    className="w-48 h-32 bg-white rounded-2xl shadow-xl flex items-center justify-center border border-slate-100/50 backdrop-blur-sm relative overflow-hidden"
+                  >
+                    {/* Shimmer Effect */}
+                    <motion.div
+                      animate={{
+                        x: ['-100%', '200%'],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        repeatDelay: 3,
+                      }}
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent"
+                    />
+
+                    {/* Logo Placeholder */}
+                    <motion.div
+                      animate={{
+                        color: hoveredIndex === index % partners.length ? partner.color : '#64748b',
+                      }}
+                      className="text-2xl font-bold tracking-tight"
+                    >
+                      {partner.name}
+                    </motion.div>
+
+                    {/* 3D Depth Effect */}
+                    <motion.div
+                      animate={{
+                        opacity: hoveredIndex === index % partners.length ? 1 : 0,
+                      }}
+                      className="absolute inset-0 bg-gradient-to-br from-white/0 via-white/20 to-white/0 pointer-events-none"
+                    />
+                  </motion.div>
+
+                  {/* Floating Particles */}
+                  {hoveredIndex === index % partners.length && (
+                    <AnimatePresence>
+                      {[...Array(6)].map((_, i) => (
+                        <motion.div
+                          key={i}
+                          initial={{ opacity: 0, scale: 0 }}
+                          animate={{
+                            opacity: [0.8, 0],
+                            scale: [0, 1.5],
+                            x: Math.cos((i / 6) * Math.PI * 2) * 60,
+                            y: Math.sin((i / 6) * Math.PI * 2) * 60,
+                          }}
+                          exit={{ opacity: 0, scale: 0 }}
+                          transition={{ duration: 1, delay: i * 0.1 }}
+                          className="absolute top-1/2 left-1/2 w-2 h-2 rounded-full"
+                          style={{ backgroundColor: partner.color }}
+                        />
+                      ))}
+                    </AnimatePresence>
+                  )}
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Second Row - Right to Left (Slower) */}
+          <div className="relative py-8">
+            <motion.div
+              initial={{ x: '-50%' }}
+              animate={{ x: 0 }}
+              transition={{
+                duration: 25,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="flex gap-8 w-max"
+            >
+              {[...partners, ...partners, ...partners].reverse().map((partner, index) => (
+                <motion.div
+                  key={`row2-${index}`}
+                  onMouseEnter={() => setHoveredIndex((partners.length - 1 - index) % partners.length)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                  whileHover={{
+                    scale: 1.15,
+                    rotateY: -15,
+                    rotateX: 10,
+                    z: 50,
+                  }}
+                  style={{
+                    transformStyle: 'preserve-3d',
+                    perspective: 1000,
+                  }}
+                  className="flex-shrink-0 relative group"
+                >
+                  {/* Card */}
+                  <motion.div
+                    animate={{
+                      boxShadow: hoveredIndex === (partners.length - 1 - index) % partners.length
+                        ? `0 25px 50px -12px ${partner.color}40`
+                        : "0 10px 30px -10px rgba(0,0,0,0.1)",
+                    }}
+                    className="w-48 h-32 bg-white rounded-2xl shadow-xl flex items-center justify-center border border-slate-100/50 backdrop-blur-sm relative overflow-hidden"
+                  >
+                    {/* Shimmer Effect */}
+                    <motion.div
+                      animate={{
+                        x: ['-100%', '200%'],
+                      }}
+                      transition={{
+                        duration: 2.5,
+                        repeat: Infinity,
+                        repeatDelay: 3.5,
+                      }}
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent"
+                    />
+
+                    {/* Logo Placeholder */}
+                    <motion.div
+                      animate={{
+                        color: hoveredIndex === (partners.length - 1 - index) % partners.length ? partner.color : '#64748b',
+                      }}
+                      className="text-2xl font-bold tracking-tight"
+                    >
+                      {partner.name}
+                    </motion.div>
+
+                    {/* 3D Depth Effect */}
+                    <motion.div
+                      animate={{
+                        opacity: hoveredIndex === (partners.length - 1 - index) % partners.length ? 1 : 0,
+                      }}
+                      className="absolute inset-0 bg-gradient-to-br from-white/0 via-white/20 to-white/0 pointer-events-none"
+                    />
+                  </motion.div>
+
+                  {/* Floating Particles */}
+                  {hoveredIndex === (partners.length - 1 - index) % partners.length && (
+                    <AnimatePresence>
+                      {[...Array(6)].map((_, i) => (
+                        <motion.div
+                          key={i}
+                          initial={{ opacity: 0, scale: 0 }}
+                          animate={{
+                            opacity: [0.8, 0],
+                            scale: [0, 1.5],
+                            x: Math.cos((i / 6) * Math.PI * 2) * 60,
+                            y: Math.sin((i / 6) * Math.PI * 2) * 60,
+                          }}
+                          exit={{ opacity: 0, scale: 0 }}
+                          transition={{ duration: 1, delay: i * 0.1 }}
+                          className="absolute top-1/2 left-1/2 w-2 h-2 rounded-full"
+                          style={{ backgroundColor: partner.color }}
+                        />
+                      ))}
+                    </AnimatePresence>
+                  )}
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
         </div>
 
       </div>

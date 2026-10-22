@@ -8,11 +8,10 @@ import ProductSeriesSection from "@/components/ai-wear/ProductSeriesSection";
 import UseCasesSection from "@/components/ai-wear/UseCasesSection";
 import FAQSection from "@/components/ai-wear/FAQSection";
 import PreBookCTASection from "@/components/ai-wear/PreBookCTASection";
-import TimelineSection from "@/components/ai-wear/TimelineSection";
 
 export const metadata = {
-  title: "AI-Wear | Trinetrum Ventures",
-  description: "The world's first truly offline AI-powered smart eyewear platform.",
+  title: "MyBlyk AI Glasses for the Visually Impaired | MyBlyk",
+  description: "Discover MyBlyk AI Glasses, being developed to help visually impaired and blind users access visual information and understand their surroundings through voice.",
 };
 
 export default function AIWearPage() {
@@ -38,7 +37,6 @@ export default function AIWearPage() {
         <TechnologySection />
         <ProductSeriesSection />
         <UseCasesSection />
-        <TimelineSection />
         <FAQSection />
         <PreBookCTASection />
       </div>

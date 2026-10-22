@@ -9,9 +9,10 @@ interface InfoCardProps {
   detail: string;
   subdetail: string;
   delay: number;
+  href?: string;
 }
 
-function TiltCard({ icon, title, detail, subdetail, delay }: InfoCardProps) {
+function TiltCard({ icon, title, detail, subdetail, delay, href }: InfoCardProps) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -62,8 +63,11 @@ function TiltCard({ icon, title, detail, subdetail, delay }: InfoCardProps) {
       className="relative flex-1 min-w-[280px] group"
     >
       <div 
-        className="h-full relative overflow-hidden rounded-2xl bg-white border border-gray-100 p-6 shadow-sm transition-shadow hover:shadow-md"
+        className={`h-full relative overflow-hidden rounded-2xl bg-white border border-gray-100 p-6 shadow-sm transition-shadow hover:shadow-md ${href ? 'cursor-pointer' : ''}`}
       >
+        {href ? (
+          <a href={href} className="absolute inset-0 z-20" aria-label={title} />
+        ) : null}
         {/* Dynamic Glowing Orb */}
         <div 
           className="pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -92,22 +96,24 @@ export default function ContactCards() {
       <TiltCard 
         icon={<Mail className="w-5 h-5" />}
         title="Email"
-        detail="hello@trinetrum.com"
+        detail="trinetrumventures@gmail.com"
         subdetail="We reply within 24 hours"
         delay={0.3}
+        href="mailto:trinetrumventures@gmail.com"
       />
       <TiltCard 
         icon={<Phone className="w-5 h-5" />}
         title="Phone"
-        detail="+91 98765 43210"
-        subdetail="Mon-Fri, 9am-6pm IST"
+        detail="+91 85329 99824"
+        subdetail="Mon–Sat, 11am–7pm IST"
         delay={0.4}
+        href="tel:+918532999824"
       />
       <TiltCard 
         icon={<MapPin className="w-5 h-5" />}
         title="Office"
-        detail="Bengaluru, Karnataka"
-        subdetail="India — Visits by appointment"
+        detail="Moradabad, Uttar Pradesh, India"
+        subdetail="Visits by appointment"
         delay={0.5}
       />
     </div>

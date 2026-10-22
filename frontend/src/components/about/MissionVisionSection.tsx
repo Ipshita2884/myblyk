@@ -37,10 +37,7 @@ export default function MissionVisionSection() {
               </h3>
               
               <p className="text-slate-600 text-lg leading-relaxed">
-                To build AI-powered assistive technology that empowers visually
-                impaired individuals with genuine independence — regardless of
-                geography, connectivity, or economic circumstance. We believe that
-                technology that serves the margins of society serves everyone better.
+                To make intelligent assistive technology more accessible, practical and human-centred, helping people understand their surroundings, navigate everyday situations and experience greater confidence, dignity and independence in daily life.
               </p>
             </div>
           </motion.div>
@@ -67,10 +64,7 @@ export default function MissionVisionSection() {
               </h3>
               
               <p className="text-slate-600 text-lg leading-relaxed">
-                A world where assistive AI is as ubiquitous as the smartphone —
-                where 285 million visually impaired individuals have access to
-                intelligent, private, and human-centered tools that make
-                independence the default, not the exception.
+                To build a future where assistive technology feels natural, useful and accessible, empowering people to interact with their surroundings more confidently while making greater independence a meaningful and realistic part of everyday life.
               </p>
             </div>
           </motion.div>

@@ -3,14 +3,14 @@ import { motion } from "framer-motion";
 
 export default function ContactHero() {
   return (
-    <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16">
+    <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 pt-8">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="inline-block px-4 py-1.5 rounded-full border border-sky-200 bg-sky-50 text-[#0ea5e9] text-xs font-bold tracking-widest uppercase mb-6"
       >
-        CONTACT US
+        LET&apos;S CONNECT
       </motion.div>
       <motion.h1
         initial={{ opacity: 0, y: 10 }}
@@ -26,7 +26,7 @@ export default function ContactHero() {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="text-base md:text-lg text-slate-600 max-w-xl leading-relaxed"
       >
-        Whether you&apos;re an investor, accessibility organization, potential partner, or future user — we want to hear from you.
+        Have a question, partnership idea, accessibility initiative or interest in MyBlyk? We&apos;d be happy to hear from you and explore how we can connect.
       </motion.p>
     </div>
   );

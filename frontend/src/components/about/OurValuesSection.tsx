@@ -6,32 +6,32 @@ import { Heart, ShieldCheck, Lightbulb, Globe, Zap, Users } from 'lucide-react';
 const values = [
   {
     title: "Human First",
-    description: "Every decision starts with the question: does this help a real person live a better life?",
+    description: "Technology should solve real problems and make everyday life more manageable.",
     icon: <Heart className="w-5 h-5 text-[#0ea5e9]" />
   },
   {
-    title: "Privacy as a Right",
-    description: "We build privacy into architecture, not policy. Your data is yours.",
+    title: "Accessibility First",
+    description: "Assistive technology should be practical, useful and designed around the people who need it.",
     icon: <ShieldCheck className="w-5 h-5 text-[#0ea5e9]" />
   },
   {
-    title: "Engineering Excellence",
-    description: "We pursue technical depth and craftsmanship at every layer of the stack.",
+    title: "Independence",
+    description: "Aim to help people access information, understand their surroundings and manage everyday activities with greater confidence.",
     icon: <Lightbulb className="w-5 h-5 text-[#0ea5e9]" />
   },
   {
-    title: "Universal Access",
-    description: "Great assistive technology should be available to everyone, regardless of geography or income.",
+    title: "Responsible AI",
+    description: "Build with awareness of privacy, limitations and the real-world impact of AI.",
     icon: <Globe className="w-5 h-5 text-[#0ea5e9]" />
   },
   {
-    title: "Relentless Iteration",
-    description: "We ship, learn from real users, and improve continuously. Perfect is the enemy of helpful.",
+    title: "Safety Matters",
+    description: "Design around useful assistance while respecting the limits of technology and human judgement.",
     icon: <Zap className="w-5 h-5 text-[#0ea5e9]" />
   },
   {
-    title: "Collaborative Spirit",
-    description: "We work alongside NGOs, researchers, and the accessibility community to build what's truly needed.",
+    title: "Innovation & Affordability",
+    description: "Aim to develop practical technology that continues to improve while keeping accessibility and affordability in mind.",
     icon: <Users className="w-5 h-5 text-[#0ea5e9]" />
   }
 ];

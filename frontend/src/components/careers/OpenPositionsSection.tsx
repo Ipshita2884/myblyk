@@ -210,38 +210,97 @@ export default function OpenPositionsSection() {
   };
 
   return (
-    <section className="py-24 bg-white text-gray-900" id="open-positions">
-      <div className="container mx-auto px-6 max-w-4xl">
-        <div className="text-center mb-12">
-          <div className="inline-block px-3 py-1 mb-4 text-[10px] font-bold tracking-widest text-blue-600 uppercase bg-blue-50 border border-blue-100 rounded-full">
+    <section className="py-24 bg-gradient-to-b from-white to-slate-50 text-gray-900 relative overflow-hidden" id="open-positions">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          animate={{
+            scale: [1, 1.15, 1],
+            opacity: [0.05, 0.1, 0.05],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-[10%] left-[-5%] w-[30%] h-[30%] bg-gradient-to-br from-[#0ea5e9]/10 to-purple-500/10 rounded-full blur-[100px]"
+        />
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.05, 0.1, 0.05],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }}
+          className="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] bg-gradient-to-tl from-indigo-500/10 to-[#0ea5e9]/10 rounded-full blur-[100px]"
+        />
+      </div>
+
+      <div className="container mx-auto px-6 max-w-4xl relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="inline-block px-4 py-2 mb-4 text-[10px] font-bold tracking-widest text-[#0ea5e9] uppercase bg-gradient-to-r from-[#f0f7ff] to-[#e0e7ff] border border-blue-100/50 rounded-full shadow-lg shadow-[#0ea5e9]/10"
+          >
+            <motion.div
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0.5, 1, 0.5],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="inline-block w-1.5 h-1.5 rounded-full bg-[#0ea5e9] mr-2"
+            />
             OPEN POSITIONS
-          </div>
+          </motion.div>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-8">
-            Find your role
+            Find your <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0ea5e9] to-purple-500">role</span>
           </h2>
           
           {/* Categories */}
           <div className="flex flex-wrap justify-center gap-2 mb-8">
-            {JOB_CATEGORIES.map((cat) => {
+            {JOB_CATEGORIES.map((cat, index) => {
               const isActive = activeCategory === cat;
               return (
-                <button
+                <motion.button
                   key={cat}
                   onClick={() => handleCategoryChange(cat)}
-                  className={`relative px-4 py-2 text-sm font-medium rounded-full transition-colors ${
-                    isActive ? "text-white" : "text-gray-600 bg-gray-50 border border-gray-200 hover:bg-gray-100"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: 0.2 + (index * 0.05) }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`relative px-5 py-2.5 text-sm font-medium rounded-full transition-colors ${
+                    isActive ? "text-white" : "text-gray-600 bg-white/50 backdrop-blur-sm border border-gray-200 hover:bg-gray-100"
                   }`}
                 >
                   {isActive && (
                     <motion.div
                       layoutId="activeCategoryIndicator"
-                      className="absolute inset-0 bg-[#0088cc] rounded-full"
+                      className="absolute inset-0 bg-gradient-to-r from-[#0ea5e9] to-[#0284c7] rounded-full shadow-lg shadow-[#0ea5e9]/30"
                       initial={false}
                       transition={{ type: "spring", stiffness: 500, damping: 35 }}
                     />
                   )}
                   <span className="relative z-10">{cat}</span>
-                </button>
+                </motion.button>
               );
             })}
           </div>
@@ -249,51 +308,66 @@ export default function OpenPositionsSection() {
           {/* Search Bar */}
           <div className="relative max-w-lg mx-auto group mb-12">
             <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
-              <Search className="w-5 h-5 text-gray-400 group-focus-within:text-[#0088cc] transition-colors" />
+              <motion.div
+                animate={{ rotate: [0, 10, -10, 0] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <Search className="w-5 h-5 text-gray-400 group-focus-within:text-[#0ea5e9] transition-colors" />
+              </motion.div>
             </div>
-            <input
+            <motion.input
+              whileFocus={{ scale: 1.02 }}
               type="text"
-              className="block w-full p-4 pl-12 text-sm text-gray-900 border border-gray-200 rounded-2xl bg-white focus:ring-2 focus:ring-[#0088cc] focus:border-transparent transition-all shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] outline-none"
+              className="block w-full p-4 pl-12 text-sm text-gray-900 border border-gray-200 rounded-2xl bg-white/70 backdrop-blur-sm focus:ring-2 focus:ring-[#0ea5e9]/30 focus:border-[#0ea5e9] transition-all shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] outline-none"
               placeholder="Search by role, keyword..."
               value={searchQuery}
               onChange={handleSearchChange}
             />
           </div>
-        </div>
+        </motion.div>
 
         {/* Job List */}
         <div className="space-y-4 min-h-[400px]">
           <AnimatePresence mode="popLayout">
             {paginatedJobs.length > 0 ? (
-              paginatedJobs.map((job) => (
+              paginatedJobs.map((job, index) => (
                 <motion.div
                   key={job.id}
                   layout
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.3 }}
-                  className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all"
+                  transition={{ duration: 0.3, delay: index * 0.05 }}
+                  className="bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-2xl overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(14,165,233,0.15)] hover:border-[#0ea5e9]/30 transition-all group"
                 >
                   {/* Header / Trigger */}
-                  <button
+                  <motion.button
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.99 }}
                     onClick={() => toggleJob(job.id)}
-                    className="w-full text-left p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 focus:outline-none transition-colors hover:bg-gray-50/50"
+                    className="w-full text-left p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 focus:outline-none transition-colors hover:bg-gradient-to-r hover:from-[#f0f7ff]/30 hover:to-transparent"
                   >
                     <div>
                       <div className="flex items-center gap-3 mb-2">
-                        <h3 className="text-xl font-semibold text-gray-900">{job.title}</h3>
+                        <motion.h3 
+                          className="text-xl font-semibold text-gray-900 group-hover:text-[#0ea5e9] transition-colors"
+                        >
+                          {job.title}
+                        </motion.h3>
                       </div>
                       <div className="flex flex-wrap items-center gap-4 text-xs font-medium text-gray-500">
-                        <span className="flex items-center gap-1.5"><Briefcase className="w-3.5 h-3.5"/> {job.category}</span>
-                        <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5"/> {job.location}</span>
-                        <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5"/> {job.type}</span>
+                        <span className="flex items-center gap-1.5 px-3 py-1 bg-gray-50 rounded-full"><Briefcase className="w-3.5 h-3.5 text-[#0ea5e9]"/> {job.category}</span>
+                        <span className="flex items-center gap-1.5 px-3 py-1 bg-gray-50 rounded-full"><MapPin className="w-3.5 h-3.5 text-[#0ea5e9]"/> {job.location}</span>
+                        <span className="flex items-center gap-1.5 px-3 py-1 bg-gray-50 rounded-full"><Clock className="w-3.5 h-3.5 text-[#0ea5e9]"/> {job.type}</span>
                       </div>
                     </div>
-                    <div className="text-gray-400 flex-shrink-0 flex items-center justify-center transition-transform duration-300">
-                      <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${expandedJobId === job.id ? 'rotate-180 text-[#0088cc]' : ''}`} />
-                    </div>
-                  </button>
+                    <motion.div 
+                      className="text-gray-400 flex-shrink-0 flex items-center justify-center transition-transform duration-300"
+                      animate={{ rotate: expandedJobId === job.id ? 180 : 0 }}
+                    >
+                      <ChevronDown className={`w-5 h-5 ${expandedJobId === job.id ? 'text-[#0ea5e9]' : ''}`} />
+                    </motion.div>
+                  </motion.button>
 
                   {/* Body / Expandable Content */}
                   <AnimatePresence>
@@ -346,11 +420,37 @@ export default function OpenPositionsSection() {
                             </div>
                           </div>
 
-                          <div className="mt-8">
-                            <button className="bg-[#0088cc] hover:bg-[#0077b3] text-white font-medium py-2.5 px-6 rounded-lg transition-colors text-sm flex items-center gap-2 shadow-[0_4px_14px_rgba(0,136,204,0.39)]">
-                              Apply for This Role <span>→</span>
+                          <motion.div 
+                            className="mt-8"
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                          >
+                            <button className="bg-gradient-to-r from-[#0ea5e9] to-[#0284c7] hover:from-[#0284c7] hover:to-[#0369a1] text-white font-medium py-3 px-8 rounded-xl transition-all text-sm flex items-center gap-2 shadow-xl shadow-[#0ea5e9]/30 hover:shadow-[#0ea5e9]/50 relative overflow-hidden group">
+                              <motion.div
+                                className="absolute inset-0 bg-white/20"
+                                animate={{
+                                  x: ['-100%', '100%'],
+                                }}
+                                transition={{
+                                  duration: 2,
+                                  repeat: Infinity,
+                                  ease: "linear"
+                                }}
+                              />
+                              <span className="relative z-10">Apply for This Role</span>
+                              <motion.span
+                                className="relative z-10"
+                                animate={{ x: [0, 5, 0] }}
+                                transition={{
+                                  duration: 1.5,
+                                  repeat: Infinity,
+                                  ease: "easeInOut"
+                                }}
+                              >
+                                →
+                              </motion.span>
                             </button>
-                          </div>
+                          </motion.div>
                         </div>
                       </motion.div>
                     )}
@@ -381,39 +481,51 @@ export default function OpenPositionsSection() {
 
         {/* Pagination */}
         {totalPages > 1 && (
-          <div className="flex justify-center items-center gap-2 mt-10">
-            <button
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex justify-center items-center gap-2 mt-10"
+          >
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
               onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
               disabled={currentPage === 1}
               className="p-2 rounded-full hover:bg-gray-100 disabled:opacity-30 disabled:hover:bg-transparent transition-colors text-gray-600"
               aria-label="Previous page"
             >
               <ChevronUp className="w-5 h-5 -rotate-90" />
-            </button>
+            </motion.button>
             <div className="flex items-center gap-1">
               {Array.from({ length: totalPages }).map((_, i) => (
-                <button
+                <motion.button
                   key={i}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                   onClick={() => setCurrentPage(i + 1)}
-                  className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-colors ${
+                  className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-all ${
                     currentPage === i + 1
-                      ? "bg-[#0088cc] text-white"
+                      ? "bg-gradient-to-r from-[#0ea5e9] to-[#0284c7] text-white shadow-lg shadow-[#0ea5e9]/30"
                       : "text-gray-600 hover:bg-gray-100"
                   }`}
                 >
                   {i + 1}
-                </button>
+                </motion.button>
               ))}
             </div>
-            <button
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
               onClick={() => setCurrentPage((p) => Math.max(1, p + 1))}
               disabled={currentPage === totalPages}
               className="p-2 rounded-full hover:bg-gray-100 disabled:opacity-30 disabled:hover:bg-transparent transition-colors text-gray-600"
               aria-label="Next page"
             >
               <ChevronDown className="w-5 h-5 -rotate-90" />
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         )}
       </div>
       

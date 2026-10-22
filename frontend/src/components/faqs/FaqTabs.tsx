@@ -6,9 +6,11 @@ interface FaqTabsProps {
 }
 
 const TABS = [
-  "About AI-Wear",
-  "Privacy & Security",
-  "Availability & Pricing",
+  "Product & Capabilities",
+  "Technology & Connectivity",
+  "Privacy, Safety & Trust",
+  "Pricing, Pre-Booking & Availability",
+  "Everyday Use & Accessibility",
   "Company & Partnerships"
 ];
 

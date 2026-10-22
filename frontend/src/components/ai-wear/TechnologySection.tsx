@@ -5,38 +5,38 @@ export default function TechnologySection() {
     {
       icon: <Eye className="w-5 h-5" />,
       badge: "CORE",
-      title: "Computer Vision",
-      description: "Multi-class object detection, text recognition (OCR), face identification, obstacle mapping, and scene understanding."
+      title: "Computer Vision (Core)",
+      description: "AI models are being developed and refined to perceive and interpret visual information, including objects and text, with broader scene understanding as the system evolves."
     },
     {
       icon: <Brain className="w-5 h-5" />,
       badge: "CORE",
-      title: "Edge AI",
-      description: "Optimized neural networks run entirely on embedded hardware — no cloud dependency, no data transmission required."
+      title: "Edge AI (Core)",
+      description: "Selected core functions are intended to run on-device, reducing unnecessary dependence on mobile and cloud processing."
     },
     {
       icon: <Cpu className="w-5 h-5" />,
       badge: "CORE",
-      title: "Embedded Intelligence",
-      description: "Custom hardware-software co-design ensures minimal power draw, thermal efficiency, and long battery life."
+      title: "Embedded Intelligence (Core)",
+      description: "Hardware and AI software are being developed together to support an increasingly integrated wearable architecture."
     },
     {
       icon: <ShieldCheck className="w-5 h-5" />,
       badge: "SECURITY",
-      title: "Privacy Architecture",
-      description: "All processing is local. No visual data leaves the device. Audit-ready privacy by design — not by policy."
+      title: "Privacy-Conscious Processing (Security)",
+      description: "Designed around privacy-conscious data handling, the system aims to manage where information is processed and limit unnecessary external data transfer."
     },
     {
       icon: <Mic className="w-5 h-5" />,
       badge: "INTERFACE",
-      title: "Spatial Audio",
-      description: "Bone-conduction audio delivers voice guidance without blocking ambient sound — safety without isolation."
+      title: "Voice Interaction (Interface)",
+      description: "An intuitive, hands-free audio interface is designed to communicate useful information without requiring users to rely on a screen."
     },
     {
       icon: <WifiOff className="w-5 h-5" />,
       badge: "RELIABILITY",
-      title: "Offline Intelligence",
-      description: "Works in metros, hospitals, rural areas, and anywhere connectivity is absent or unreliable. Always on."
+      title: "Dual-Layer Processing (Reliability)",
+      description: "A hybrid processing approach is being developed to handle suitable tasks on-device while using mobile or cloud resources for more computationally intensive workflows when required."
     }
   ];
 
@@ -47,15 +47,15 @@ export default function TechnologySection() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-block px-4 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-slate-300 text-[10px] font-bold tracking-widest uppercase mb-6 shadow-sm">
-            TECHNOLOGY
+            TECHNOLOGY BUILDING
           </div>
-          
+
           <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
-            Built on Frontier Intelligence
+            Intelligence Built Around the User.
           </h2>
-          
+
           <p className="text-lg text-slate-400">
-            AI-Wear integrates five converging technologies into a single wearable platform that works silently, reliably, and privately.
+            MyBlyk brings together AI, computer vision, embedded intelligence and voice interaction in a wearable system being developed towards a unified experience for everyday assistance.
           </p>
         </div>
 

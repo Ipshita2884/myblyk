@@ -9,8 +9,8 @@ import RecognitionAwardsSection from "@/components/about/RecognitionAwardsSectio
 import AboutCTASection from "@/components/about/AboutCTASection";
 
 export const metadata = {
-  title: "About Us | Trinetrum Ventures",
-  description: "Learn about Trinetrum Ventures and our mission to create AI-powered assistive eyewear.",
+  title: "About MyBlyk | Our Story, Mission & Team",
+  description: "Learn about MyBlyk, an assistive technology brand by Trinetrum Ventures, its founders, mission and work towards more accessible AI-powered assistance.",
 };
 
 export default function AboutPage() {

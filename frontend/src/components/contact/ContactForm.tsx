@@ -4,10 +4,12 @@ import { useState } from "react";
 import { MessageSquare, TrendingUp, Handshake, ShoppingCart } from "lucide-react";
 
 const INQUIRY_TYPES = [
-  { id: "General", icon: MessageSquare },
+  { id: "General Enquiry", icon: MessageSquare },
+  { id: "Product / Pre-booking", icon: ShoppingCart },
   { id: "Investor", icon: TrendingUp },
-  { id: "Partnership", icon: Handshake },
-  { id: "Pre-Book", icon: ShoppingCart },
+  { id: "NGO / Accessibility Partnership", icon: Handshake },
+  { id: "Technology Partnership", icon: Handshake },
+  { id: "Other", icon: MessageSquare },
 ];
 
 const containerVariants = {
@@ -27,7 +29,7 @@ const itemVariants = {
 };
 
 export default function ContactForm() {
-  const [selectedType, setSelectedType] = useState("General");
+  const [selectedType, setSelectedType] = useState("General Enquiry");
 
   return (
     <motion.div

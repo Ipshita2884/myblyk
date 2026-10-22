@@ -7,16 +7,18 @@ export default function ProductSeriesSection() {
     {
       mostPopular: true,
       imageSrc: "https://images.unsplash.com/photo-1573867639040-6dd25fa5f597?q=80&w=800&auto=format&fit=crop",
-      title: "Assist Series",
-      subtitle: "For Independent Living",
-      description: "Designed for the visually impaired and their families. Provides real-time navigation, reading, object identification, and social guidance in everyday environments.",
-      targetAudience: "Individuals, Families, NGOs",
+      title: "ASSIST SERIES",
+      subtitle: "For Visually Impaired and Blind Users",
+      description: "Designed around environmental awareness, accessibility and everyday assistance. Assist aims to help users access visual information, understand their surroundings and approach daily activities with greater confidence.",
+      targetAudience: "Visually Impaired and Blind Users",
       features: [
+        "Object and environment understanding",
+        "Text reading",
+        "Voice-based information",
+        "Everyday accessibility assistance",
         "Navigation assistance",
-        "Text & label reading",
-        "Face recognition",
-        "Obstacle detection",
-        "Emergency alerts"
+        "Daily utility functions",
+        "Find My Glasses"
       ],
       buttonText: "Pre-Book Now",
       buttonStyle: "bg-[#0ea5e9] hover:bg-[#0284c7] text-white border-transparent shadow-md shadow-[#0ea5e9]/20"
@@ -24,35 +26,38 @@ export default function ProductSeriesSection() {
     {
       mostPopular: false,
       imageSrc: "https://images.unsplash.com/photo-1527267207156-3390c50d4d8a?q=80&w=800&auto=format&fit=crop",
-      title: "Explorer Series",
-      subtitle: "For Independent Travel",
-      description: "Extended battery, advanced mapping, and multi-language support for the traveler, student, or professional navigating unfamiliar environments.",
-      targetAudience: "Students, Travelers, Researchers",
+      title: "ECHO SERIES",
+      subtitle: "For People with Partial Hearing Loss",
+      description: "A future MyBlyk experience being planned for people with partial hearing loss. The Echo series explores cross-modal sensory technology, translating selected ambient and environmental sound cues into alternative sensory outputs.",
+      targetAudience: "People with Partial Hearing Loss",
       features: [
-        "Multi-language OCR",
-        "GPS integration",
-        "Extended battery",
-        "Cloud sync (optional)",
-        "Smart notifications"
+        "Bone conduction audio",
+        "Sound-to-vibration concepts",
+        "Conductive hearing loss support concepts",
+        "Inner-ear sound transmission concept",
+        "Daily utility functions",
+        "Find My Glasses"
       ],
-      buttonText: "Register Interest",
+      buttonText: "Available Soon",
       buttonStyle: "bg-transparent hover:bg-slate-800/80 text-slate-300 border-slate-700 hover:border-slate-500"
     },
     {
       mostPopular: false,
       imageSrc: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop",
-      title: "Industrial Series",
-      subtitle: "For Enterprise & Industry",
-      description: "Built for hazardous and complex environments. Industrial-grade durability, custom AI models, enterprise integration, and compliance-grade privacy.",
-      targetAudience: "Enterprises, Healthcare, Government",
+      title: "EXPLORER SERIES",
+      subtitle: "For Independent Travellers, Explorers, Students and Researchers",
+      description: "Designed for people seeking proactive AI-driven environmental context while travelling or navigating unfamiliar languages. The Explorer series is envisioned as an intelligent wearable companion for discovery, combining specialised utility with broader consumer functionality.",
+      targetAudience: "Independent Travellers, Explorers, Students and Researchers",
       features: [
-        "Industrial-grade housing",
-        "Custom AI models",
-        "Enterprise dashboard",
-        "Compliance ready",
-        "Priority support"
+        "Environmental understanding",
+        "Travel assistance",
+        "Information access",
+        "Navigation-related assistance under development",
+        "Voice interaction",
+        "Daily utility functions",
+        "Find My Glasses"
       ],
-      buttonText: "Contact Sales",
+      buttonText: "Pre-Book Now",
       buttonStyle: "bg-transparent hover:bg-slate-800/80 text-slate-300 border-slate-700 hover:border-slate-500"
     }
   ];
@@ -66,13 +71,13 @@ export default function ProductSeriesSection() {
           <div className="inline-flex px-4 py-1.5 rounded-full bg-sky-50 text-[#0ea5e9] font-bold text-xs uppercase tracking-widest mb-6 border border-sky-100 shadow-sm">
             PRODUCT SERIES
           </div>
-          
+
           <h2 className="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
-            Three Series. One Mission.
+            Three Experiences. One Purpose.
           </h2>
-          
+
           <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
-            AI-Wear comes in three purpose-built variants — each designed for a distinct context, audience, and set of needs.
+            MyBlyk is developing a product family for different everyday needs, from accessibility-focused assistance to independent exploration.
           </p>
         </div>
 

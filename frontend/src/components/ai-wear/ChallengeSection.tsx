@@ -6,22 +6,22 @@ export default function ChallengeSection() {
       icon: <Globe className="w-6 h-6" />,
       iconColor: "text-blue-500",
       bgColor: "bg-blue-50",
-      title: "Cloud-dependent",
-      description: "Existing products fail when connectivity drops — exactly when users need them most."
+      title: "Connectivity Dependency",
+      description: "Most of the assistive functions may depend on internet access, which is not always available."
     },
     {
       icon: <Target className="w-6 h-6" />,
       iconColor: "text-rose-500",
       bgColor: "bg-rose-50",
-      title: "Context-blind",
-      description: "Simple object detection without situational awareness misses the nuance of real life."
+      title: "Context Matters",
+      description: "Identifying an object alone may not explain what is happening around the user."
     },
     {
       icon: <Lock className="w-6 h-6" />,
       iconColor: "text-amber-500",
       bgColor: "bg-amber-50",
-      title: "Privacy invasive",
-      description: "Streaming visual data to remote servers raises serious privacy and security concerns."
+      title: "Natural Interaction",
+      description: "Assistive technology should feel simple to use, not like another complicated device."
     }
   ];
 
@@ -32,15 +32,15 @@ export default function ChallengeSection() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
           <div className="inline-flex px-4 py-1.5 rounded-full bg-sky-50 text-[#0ea5e9] font-bold text-xs uppercase tracking-widest mb-6 border border-sky-100 shadow-sm">
-            THE CHALLENGE
+            EVERYDAY CHALLENGES
           </div>
-          
+
           <h2 className="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
-            Existing solutions leave too much to chance
+            Everyday Assistance Needs More Than a Camera.
           </h2>
-          
+
           <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
-            Today's assistive devices require internet. They're reactive, not contextual. They describe what they see without understanding what matters. AI-Wear is different.
+            Understanding the world means more than detecting objects. It means making relevant information useful in everyday situations. MyBlyk is being developed around this wider need.
           </p>
         </div>
 

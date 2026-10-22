@@ -10,53 +10,61 @@ export default function HowItWorksSection() {
       color: "text-blue-500",
       bgColor: "bg-blue-50",
       borderColor: "border-blue-100",
-      title: "Camera Input",
-      description: "High-resolution optical sensor captures the real world at 60fps"
-    },
-    {
-      icon: <Cpu className="w-5 h-5" />,
-      color: "text-purple-500",
-      bgColor: "bg-purple-50",
-      borderColor: "border-purple-100",
-      title: "Sensor Fusion",
-      description: "Depth, IMU, and optical data merged into unified environment model"
+      title: "Input & Scene Sensing",
+      description: "The system senses its surroundings by capturing optical inputs and combining them with motion data, where supported, to build a foundational understanding of the environment."
     },
     {
       icon: <Eye className="w-5 h-5" />,
       color: "text-emerald-500",
       bgColor: "bg-emerald-50",
       borderColor: "border-emerald-100",
-      title: "Computer Vision",
-      description: "Objects, text, faces, and hazards identified in real-time"
+      title: "AI Understanding",
+      description: "Computer vision models process visual input to identify objects, text or elements within a scene."
     },
     {
       icon: <Brain className="w-5 h-5" />,
       color: "text-amber-500",
       bgColor: "bg-amber-50",
       borderColor: "border-amber-100",
-      title: "Edge AI Engine",
-      description: "On-device neural network processes scene context without any cloud"
+      title: "Decision Engine",
+      description: "A decision process helps prioritise information according to its relevance to the situation."
+    },
+    {
+      icon: <Cpu className="w-5 h-5" />,
+      color: "text-purple-500",
+      bgColor: "bg-purple-50",
+      borderColor: "border-purple-100",
+      title: "Edge AI & On-Device Processing",
+      description: "Selected core functions are intended to run on-device, reducing unnecessary dependence on mobile networks or cloud computing."
     },
     {
       icon: <Zap className="w-5 h-5" />,
       color: "text-rose-500",
       bgColor: "bg-rose-50",
       borderColor: "border-rose-100",
-      title: "Decision Engine",
-      description: "Priority-weighted decisions determine what information matters most"
+      title: "Mobile & Cloud Integration",
+      description: "The system can connect to a mobile device via Bluetooth Low Energy (BLE), where supported, and use mobile or cloud processing when complex tasks require additional computing power."
     },
     {
       icon: <Mic className="w-5 h-5" />,
       color: "text-blue-500",
       bgColor: "bg-blue-50",
       borderColor: "border-blue-100",
-      title: "Voice Guidance",
-      description: "Natural, conversational audio output delivered via bone-conduction speakers"
+      title: "Voice Output",
+      description: "Relevant information is communicated to the user through voice/audio output."
+    },
+    {
+      icon: <Brain className="w-5 h-5" />,
+      color: "text-indigo-500",
+      bgColor: "bg-indigo-50",
+      borderColor: "border-indigo-100",
+      title: "User Action & Voice Query",
+      description: "The user can act on the received information or initiate a two-way voice dialogue with the assistant to ask follow-up questions and request additional information, where supported."
     }
   ];
 
   return (
-    <section className="py-24 bg-[#F8FAFC] relative overflow-hidden">
+    <section id="how-it-works" className="py-24 bg-[#F8FAFC] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center">
           
@@ -71,35 +79,48 @@ export default function HowItWorksSection() {
               HOW IT WORKS
             </motion.div>
             
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
               className="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight"
             >
-              The AI-Wear <span className="text-[#0ea5e9]">Processing Pipeline</span>
+              From What You See to What You Hear.
             </motion.h2>
-            
-            <motion.p 
+
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
               className="text-lg text-slate-600 mb-6 leading-relaxed"
             >
-              Every moment, AI-Wear executes a sophisticated multi-stage pipeline — from raw optical input to precise voice guidance — entirely on-device. No cloud. No latency. No privacy compromise.
+              MyBlyk is being developed around a simple interaction: the glasses capture visual information, AI processes the relevant information, and the result is communicated to the user through voice.
             </motion.p>
-            
-            <motion.p 
+
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
               className="text-lg text-slate-600 leading-relaxed"
             >
-              The pipeline activates in under 50 milliseconds, delivering real-time awareness that feels natural and anticipatory rather than reactive.
+              The system can use different processing layers depending on the task.
             </motion.p>
+
+            {/* Example Interaction */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="mt-8 p-6 bg-slate-100 rounded-2xl border border-slate-200"
+            >
+              <p className="text-sm font-semibold text-slate-500 mb-3 uppercase tracking-wider">Example interaction:</p>
+              <p className="text-slate-800 mb-2"><span className="font-bold">User:</span> "Hey MyBlyk, mujhe batao ki mere saamne kya hai?"</p>
+              <p className="text-slate-600 text-sm italic">MyBlyk: A simple, contextual voice response based on what the system has identified.</p>
+            </motion.div>
           </div>
 
           {/* Right Content - Water Drop UI Timeline */}

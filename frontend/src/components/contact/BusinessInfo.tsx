@@ -4,11 +4,11 @@ import { MouseEvent } from "react";
 
 export default function BusinessInfo() {
   const infoItems = [
-    { label: "Legal Name", value: "Trinetrum Ventures Private Limited" },
-    { label: "Registered", value: "India (Companies Act 2013)" },
-    { label: "Headquarters", value: "Bengaluru, Karnataka 560001" },
-    { label: "Founded", value: "2024" },
-    { label: "Focus", value: "Assistive AI, Deep-Tech, Computer Vision" },
+    { label: "LEGAL NAME", value: "Trinetrum Ventures Private Limited" },
+    { label: "REGISTERED", value: "India (Companies Act 2013)" },
+    { label: "OFFICIAL ADDRESS", value: "C/O Sunil Kumar, Mohalla Fakeerganj, Kanth, Distt. Moradabad, Uttar Pradesh, India - 244501" },
+    { label: "INCORPORATED", value: "23 April 2026" },
+    { label: "FOCUS", value: "AI, Computer Vision, Edge AI Deep-Tech & Assistive Technology" },
   ];
 
   const x = useMotionValue(0);
@@ -70,13 +70,13 @@ export default function BusinessInfo() {
 
         <div className="relative z-10">
           <h3 className="text-lg font-bold text-slate-900 mb-6">
-            Business Information
+            A Little About Our Company
           </h3>
           <div className="space-y-0">
             {infoItems.map((item, idx) => (
               <div key={idx} className="flex flex-col sm:flex-row sm:justify-between py-4 border-b border-gray-100 last:border-0 last:pb-0">
                 <span className="text-slate-500 text-[13px] font-medium mb-1 sm:mb-0">{item.label}</span>
-                <span className="text-slate-900 font-bold text-[13px] sm:text-right">{item.value}</span>
+                <span className="text-slate-900 font-bold text-[13px] sm:text-right break-words">{item.value}</span>
               </div>
             ))}
           </div>

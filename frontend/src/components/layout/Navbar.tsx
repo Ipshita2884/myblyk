@@ -8,7 +8,7 @@ import { Eye, ChevronDown } from "lucide-react";
 
 const NAV_LINKS = [
   { name: "Home", path: "/" },
-  { name: "AI-Wear", path: "/ai-wear" },
+  { name: "MyBlyk", path: "/ai-wear" },
   { name: "About", path: "/about" },
   { name: "Career", path: "/careers" },
   { name: "Contact", path: "/contact" },
@@ -58,8 +58,7 @@ export default function Navbar() {
               <Eye className="w-6 h-6" />
             </div>
             <Link href="/" className="flex flex-col">
-              <span className="font-extrabold text-lg leading-none tracking-tight text-slate-900">Trinetrum</span>
-              <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold">VENTURES</span>
+              <span className="font-extrabold text-lg leading-none tracking-tight text-slate-900">MyBlyk</span>
             </Link>
           </div>
 
@@ -114,7 +113,7 @@ export default function Navbar() {
               href="/ai-wear" 
               className="bg-[#0ea5e9] hover:bg-[#0284c7] text-white px-6 py-2.5 rounded-xl font-bold transition-all shadow-md shadow-[#0ea5e9]/20 hover:shadow-[#0ea5e9]/40 hover:-translate-y-0.5"
             >
-              Explore AI-Wear
+              Explore MyBlyk
             </Link>
           </div>
 
@@ -167,7 +166,7 @@ export default function Navbar() {
                 onClick={() => setHoveredPath(null)}
                 className="block mt-2 bg-[#0ea5e9] text-white px-4 py-3 rounded-xl font-bold text-center"
               >
-                Explore AI-Wear
+                Explore MyBlyk
               </Link>
             </div>
           </motion.div>

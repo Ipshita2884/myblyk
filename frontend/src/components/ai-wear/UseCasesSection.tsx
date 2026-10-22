@@ -1,4 +1,4 @@
-import { BookOpen, MapPin, ShoppingBag, Plane, Briefcase, Factory } from 'lucide-react';
+import { BookOpen, MapPin, ShoppingBag, Plane, Briefcase, Factory, Eye, AlertTriangle } from 'lucide-react';
 import Image from 'next/image';
 
 export default function UseCasesSection() {
@@ -6,38 +6,50 @@ export default function UseCasesSection() {
     {
       icon: <BookOpen className="w-5 h-5 text-[#0ea5e9]" />,
       title: "Reading",
-      description: "Books, labels, menus, screens, and signage — read aloud instantly in any language.",
+      description: "Get help accessing text from labels, signs, documents and other everyday materials through voice-based assistance.",
       imageSrc: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800&auto=format&fit=crop"
     },
     {
-      icon: <MapPin className="w-5 h-5 text-[#0ea5e9]" />,
-      title: "Navigation",
-      description: "Turn-by-turn guidance, obstacle warnings, and landmark identification in any environment.",
+      icon: <Eye className="w-5 h-5 text-[#0ea5e9]" />,
+      title: "Understanding Objects",
+      description: "Identify and understand objects in the surrounding environment.",
       imageSrc: "https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+      icon: <MapPin className="w-5 h-5 text-[#0ea5e9]" />,
+      title: "Navigating Spaces",
+      description: "Support environmental awareness in indoor and outdoor spaces. Navigation-related capabilities are under development.",
+      imageSrc: "https://images.unsplash.com/photo-1578916171728-46686eac8d58?q=80&w=800&auto=format&fit=crop"
     },
     {
       icon: <ShoppingBag className="w-5 h-5 text-[#0ea5e9]" />,
       title: "Shopping",
-      description: "Product identification, price reading, comparison, and self-checkout support.",
-      imageSrc: "https://images.unsplash.com/photo-1578916171728-46686eac8d58?q=80&w=800&auto=format&fit=crop"
+      description: "Access information such as product labels and other visual details while shopping.",
+      imageSrc: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=800&auto=format&fit=crop"
     },
     {
       icon: <Plane className="w-5 h-5 text-[#0ea5e9]" />,
       title: "Travel",
-      description: "Airport navigation, ticket reading, schedule announcements, and multi-language support.",
-      imageSrc: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=800&auto=format&fit=crop"
+      description: "Get support when accessing information and understanding unfamiliar surroundings while travelling.",
+      imageSrc: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=800&auto=format&fit=crop"
     },
     {
       icon: <Briefcase className="w-5 h-5 text-[#0ea5e9]" />,
       title: "Professional",
-      description: "Office navigation, document reading, meeting support, and workplace accessibility.",
-      imageSrc: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=800&auto=format&fit=crop"
+      description: "Explore potential support for document reading, workplace accessibility and everyday office tasks.",
+      imageSrc: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop"
     },
     {
-      icon: <Factory className="w-5 h-5 text-[#0ea5e9]" />,
+      icon: <Eye className="w-5 h-5 text-[#0ea5e9]" />,
+      title: "Everyday Awareness",
+      description: "Provide voice-based information about relevant elements of the surrounding environment.",
+      imageSrc: "https://images.unsplash.com/photo-1573867639040-6dd25fa5f597?q=80&w=800&auto=format&fit=crop"
+    },
+    {
+      icon: <AlertTriangle className="w-5 h-5 text-[#0ea5e9]" />,
       title: "Industrial",
-      description: "Hazard detection, equipment identification, and safety guidance in complex environments.",
-      imageSrc: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop"
+      description: "Potential use cases include hazard awareness, equipment identification and guidance in complex work environments.",
+      imageSrc: "https://images.unsplash.com/photo-1527267207156-3390c50d4d8a?q=80&w=800&auto=format&fit=crop"
     }
   ];
 
@@ -48,15 +60,15 @@ export default function UseCasesSection() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
           <div className="inline-flex px-4 py-1.5 rounded-full bg-sky-50 text-[#0ea5e9] font-bold text-xs uppercase tracking-widest mb-6 border border-sky-100">
-            USE CASES
+            REAL-WORLD USE CASES
           </div>
-          
+
           <h2 className="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
-            Real World. Real Impact.
+            Small Moments. Meaningful Assistance.
           </h2>
-          
+
           <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
-            AI-Wear transforms everyday moments that others take for granted into experiences of genuine independence and confidence.
+            MyBlyk is being developed for everyday situations where access to visual information can make a difference.
           </p>
         </div>
 

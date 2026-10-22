@@ -37,6 +37,9 @@ export default function PreBookCTASection() {
       {/* Top Blurry Fade to blend seamlessly with the white section above */}
       <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-white via-white/80 to-transparent z-30 pointer-events-none" />
 
+      {/* Bottom transition fade into footer */}
+      <div className="absolute bottom-0 left-0 w-full h-40 md:h-48 bg-gradient-to-t from-[#565F70] via-[#565F70]/90 to-transparent z-30 pointer-events-none" />
+
       {/* Cool Image Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <div className="absolute inset-0 bg-slate-900/40 mix-blend-multiply z-10" />
@@ -74,15 +77,15 @@ export default function PreBookCTASection() {
               className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-white px-5 py-2 rounded-full text-xs font-bold tracking-widest uppercase mb-8 shadow-[0_0_20px_rgba(255,255,255,0.15)]"
             >
               <Sparkles className="w-4 h-4 text-amber-300" />
-              Early Access Now Open
+              EARLY ACCESS OPEN
             </motion.div>
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 max-w-3xl mx-auto leading-[1.15] text-white tracking-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)]">
-              Ready to Pre-Book AI-Wear?
+              Ready to Experience MyBlyk?
             </h2>
 
             <p className="text-blue-50/90 text-lg md:text-xl mb-12 max-w-xl mx-auto leading-relaxed font-medium">
-              Join our early access list. Be among the first to experience a new standard in assistive technology.
+              MyBlyk AI Glasses are being built to bring practical AI assistance into everyday environments. Pre-book for ₹999 and join the early access journey as we work towards product launch.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -93,7 +96,7 @@ export default function PreBookCTASection() {
                   className="group relative bg-[#020817] text-white font-extrabold px-10 py-5 rounded-2xl flex items-center gap-3 w-full sm:w-auto justify-center shadow-[0_0_40px_rgba(0,0,0,0.5)] border border-slate-700 hover:border-[#0ea5e9] transition-all overflow-hidden"
                 >
                   <span className="relative z-10 flex items-center gap-2 group-hover:text-[#0ea5e9] transition-colors">
-                    Pre-Book Now
+                    Pre-Book for ₹999
                     <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </motion.button>
